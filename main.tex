@@ -1,0 +1,340 @@
+\documentclass[aps,prd,preprint,floats,epsf,superscriptaddress,nofootinbib]{revtex4}
+%\documentclass[aps,prd,twocolumn,superscriptaddress,preprintnumbers]{revtex4}
+
+
+\usepackage{amsmath,amssymb,amsthm,amsfonts} % general AMS maths resource packages
+\usepackage{bm} % bold math
+\usepackage{bbm} % bold math for {\mathbbm 1}
+\usepackage{braket} % Dirac bracket notation for quantum physics
+\usepackage{cancel} % cancel terms to something
+%\usepackage{caption} % use subfigure environments inside a figure environment
+%\usepackage{subcaption} % use subfigure environments inside a figure environment
+\usepackage{color}
+\usepackage{dcolumn} % align table columns on decimal point
+\usepackage{dsfont}
+\usepackage{empheq} % boxed equation
+\usepackage{enumitem} % enumerate items in different ways
+%\usepackage{epsfig,showkeys}
+\usepackage{graphicx} % packages to allow inclusion of graphics
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc} % useful to type directly diacritic characters
+\usepackage{marginnote}
+\usepackage{mathrsfs}
+\usepackage{mathtools} % in order to use \Aboxed
+\usepackage{multirow}
+\usepackage{setspace} % set line spacing
+\usepackage{simpler-wick} % Wick contraction
+\usepackage{slashed} % Feynman slashes
+%\usepackage[skins,breakable]{tcolorbox} % breakable box
+\usepackage{subfigure} % use subfigures
+\usepackage[most]{tcolorbox} % breakable box
+\usepackage{tikz} % draw commutative diagrams
+\usetikzlibrary{matrix}
+\usepackage{ulem}
+\usepackage{wrapfig} % wrap text around figures
+\usepackage{xcolor}
+\usepackage[vcentermath]{youngtab} % draw Young tableaux
+\usepackage{ytableau} % draw Young tableaux, better than youngtab
+
+
+
+\usepackage[T1]{fontenc}
+\usepackage{calligra}
+\usepackage[T1]{pbsi}
+\usepackage{CJKutf8} % Chinese typing
+
+
+%\usepackage[left=1cm,top=1cm,bottom=1cm,right=1cm,nohead,nofoot]{geometry} % margins
+\usepackage[colorlinks,
+            linkcolor=black,
+            anchorcolor=black,
+            citecolor=black,
+%            linktoc=all
+            ]{hyperref} % For creating hyperlinks in cross references
+%\usepackage[linktoc=all]{hyperref}
+\definecolor{wine-stain}{rgb}{0.5,0,0}
+\hypersetup{
+  colorlinks,
+  linkcolor=blue,
+%  linkcolor=wine-stain,
+  linktoc=all
+}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+\newcommand{\cf}{{\it cf}}
+\newcommand{\re}{{\rm Re}}
+\newcommand{\im}{{\rm Im}}
+\newcommand{\parallelsum}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\blue}[1]{\color{blue} #1}
+\newcommand{\red}[1]{\color{red} #1}
+\newcommand{\tr}{\operatorname{tr}}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\topmargin 0in
+%\textheight 8.7in
+%\textwidth 6.2in
+%\hoffset -0.4in
+
+\begin{document}
+
+\bigskip
+\title{\bf Quantum Teleportation: \\ Protocol, Implementation, and Applications}
+\bigskip
+
+\author{Ying-Han Su, }
+\email[e-mail: ]{b11303052@ntu.edu.tw}
+\affiliation{Department of Physics, National Taiwan University, Taipei, Taiwan 10617, R.O.C.}
+
+\date{\today}
+
+\begin{abstract}
+This report provides a comprehensive study of quantum teleportation, covering its protocol, implementation, and applications. We begin with an introduction to the fundamental concepts and historical development of quantum teleportation. We then present the theoretical framework and the step-by-step protocol for achieving quantum teleportation. Following this, we discuss various implementation strategies and their practical challenges. Finally, we explore the current and potential applications of quantum teleportation in quantum information processing and communication.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Topical Study}
+\label{sec:Topical Study}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Section}
+%\label{sec:section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+As part of the activities in this course, you are asked to form groups of topical study, each of which consists of {\it at most five} people.  Each group should pick one from the suggested topics provided in the ``Notes 06 PHYS 7015 Syllabus 20260303.pdf'' file.  You are also welcome to propose other topics, and we will evaluate whether they are relevant to the course and at an appropriate level.  Once the topic is selected/approved, you can proceed with the topical study with your teammates.
+
+
+Your study can start from but {\it should not} be limited to the provided references.  It is merely meant to be a starting point.  Through literature search and study, we hope you will delve deeper into the topic and understand it better.  Toward the end of the semester, each group is asked to make an oral presentation of about 40 minutes and answer questions from the audience, and to prepare a written report that should contain more details (derivations, discussions, figures, etc.) about your study.
+
+
+The purpose of this activity is to train your ability in research, including literature survey, independent study, collaboration, professional writing, and oral presentation.  You should digest the materials you have found, reorganize and present them in writing and in the oral report.  You should play with practical numbers in the problem, generate a few plots, and so on, to help you gain more insight and understanding about the topic.  It is good training about organizing your thoughts and presenting them in a logical and clear way so that not only can other readers easily understand and appreciate your report/presentation, but, more importantly, you can quickly remind yourself of what you have done/learned years later without difficulty.
+
+
+The written report should be ready and shared with the class {\it before} your oral presentation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+\section{About the Report}
+\label{sec:About the Report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Basic Structure of Report}
+\label{sec:Basic Structure of Report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Prepare a report {\it in} {\TeX} and {\it in English} that contains basically the following sections:
+\begin{itemize}
+\item
+introduction or motivations of the issue (e.g., what is the problem or question, why this topic is physically interesting, historical notes, etc.);
+
+\item
+model or framework for later discussions or analysis (e.g., defining notations, reviewing basic theory background, providing key equations, etc.);
+
+\item
+derivation in sufficient detail, leaving lengthy stuff to appendices, and discussions of physics in your results (e.g., deriving from the above-mentioned basics to the final results that will answer the initial question, providing more physical understanding about your results, discussing implications, comparing them with empirical data, etc.);
+
+\item
+summary and conclusions (e.g., reminding readers of the highlights in your study/report);
+
+\item
+using figures and tables whenever appropriate or necessary (in particular, you should make it clear whether the plots or numbers are computed by yourselves or copied from the references); and
+
+\item
+bibliography to cite essential and relevant references (learn from professional papers about how to do it properly).
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{About {\TeX}}
+\label{sec:About TeX}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Using {\TeX} or {\LaTeX} to prepare scientific research documents (theses, papers, reports, and even books) is a common practice for most physicists.  So it is better for you to master this skill as early as possible.
+
+
+One good and easy way to learn it is to start with an example file and try to write something based on it.  If you encounter difficulties, you can always look up books on {\TeX} or Google or ask a chatbot for quick solutions.  You are certainly welcome to refer to some classic books such as Refs.~\cite{knuth1986texbook,lamport1994latex}.
+
+
+Fig.~\ref{fig:example} is a placeholder for showing a plot.  It should be able to take plots of several common types (e.g., PDF, EPS, PNG, etc.).  You can replace the filename with the one you want to use.  If there is no figure to present, you should remove or comment out this part.
+
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[th]
+\includegraphics[width=0.6\textwidth]{Example_Plot.png}
+\caption{Replace this with your plot(s) and the figure caption here.}
+\label{fig:example}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Writing Style}
+\label{sec:Writing Style}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+You should write {\it in your own words} and provide {\it critical thoughts} on the topic.
+
+
+Here are some additional tips about your writing:
+\begin{itemize}
+\item
+Make good use of modern technology to help you {\it check spelling and grammatical errors}.  Pay attention to the proper usage of punctuation (including those in the equations).
+
+\item
+Be sure to clearly {\it define your symbols and notations}.
+
+\item
+Be {\it narrative} rather than simply showing a pile of equations.  Provide a physical understanding of factors or terms in the derived results.
+
+\item
+Show sufficiently detailed steps in derivations, so that people at your level of understanding can follow without difficulty.  In the case of tedious or trivial algebraic manipulations, you can schematically outline or describe how they are done.
+
+\item
+Role models would be most of the good textbooks and the research papers you have studied.
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+\section{Useful Formulas}
+\label{sec:useful_formulas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In the appendices, you can provide tedious derivations or detailed discussions that are not crucial for the discussions in the main text.
+
+First, we have for $a > 0$
+\begin{align}
+\begin{split}
+G_0
+\equiv
+\int_{-\infty}^{+\infty} e^{- \frac12 ax^2} dx
+&= \sqrt{\frac{2\pi}{a}}
+\\
+G_2
+\equiv
+\int_{-\infty}^{+\infty} x^2 e^{- \frac12 ax^2} dx
+&= \sqrt{\frac{2\pi}{a}} \frac{1}{a}
+\\
+\mbox{or}~~
+G_{2n}
+\equiv
+\int_{-\infty}^{+\infty} x^{2n} e^{- \frac12 ax^2} dx
+&= \sqrt{\frac{2\pi}{a}} \frac{1}{a^n} (2n-1)(2n-3) \cdots 3 \cdot 1
+\end{split}
+\label{eq:standard-gaussian-integrals}
+\end{align}
+in general for $n \in {\mathbb N} \cup \{ 0 \}$, where the factor of $1/2$ in the exponent is common in physics.  The proof goes as follows:
+\begin{align}
+\begin{split}
+(G_0)^2 
+&= 
+\left( \int_{-\infty}^{+\infty} e^{- \frac12 ax^2} dx \right)
+\cdot
+\left( \int_{-\infty}^{+\infty} e^{- \frac12 ay^2} dy \right)
+=
+\int_0^{2\pi} d\phi \int_0^{\infty} dr r e^{- \frac12 ar^2}
+\\
+&=
+2\pi \cdot \frac{1}{a} \int_0^{\infty} du e^{-u}
+= \frac{2\pi}{a} \left[ - e^{-u} \right]_0^\infty
+= \frac{2\pi}{a}
+\\
+\Rightarrow~
+G_0
+&=
+\sqrt{\frac{2\pi}{a}}
+\qquad \mbox{(obviously not the other solution)}
+~.
+\end{split}
+\end{align}
+The rest can be proved by induction.  Suppose the last formula in Eq.~\eqref{eq:standard-gaussian-integrals} is true for $n = k$, then for $n = k+1$ we have
+\begin{align}
+\begin{split}
+&
+\int_{-\infty}^{+\infty} x^{2(k+1)} e^{- \frac12 ax^2} dx
+=
+\int_{-\infty}^{+\infty} x^{2k} x^2 e^{- \frac12 ax^2} dx
+=
+\int_{-\infty}^{+\infty} x^{2k} \left( -2 \frac{d}{da} \right) e^{- \frac12 ax^2} dx
+\\
+&=
+\left( -2 \frac{d}{da} \right) G_{2k}
+= \sqrt{2\pi} (2k-1)(2k-3) \cdots 3 \cdot 1 \left( -2 \frac{d}{da} \right) a^{-(k+1/2)}
+\\
+&= \sqrt{2\pi} (2k+1)(2k-1) \cdots 3 \cdot 1 a^{-[(k+1)+1/2]}
+~.
+\end{split}
+\end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibitem{knuth1986texbook}
+D.~E. Knuth,
+\textit{The \TeX{} book}
+(Addison-Wesley, Reading, Massachusetts, 1986).
+
+\bibitem{lamport1994latex}
+L.~Lamport,
+\textit{\LaTeX: A Document Preparation System}, 2nd ed.
+(Addison-Wesley, Reading, Massachusetts, 1994).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
+
+
+
