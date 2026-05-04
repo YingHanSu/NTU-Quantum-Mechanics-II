@@ -93,7 +93,7 @@
 \title{\bf Quantum Teleportation: \\ Protocol, Implementation, and Applications}
 \bigskip
 
-\author{Ying-Han Su, }
+\author{Ying-Han Su, Ting-Peng Huang, Po-Rui Chen}
 \email[e-mail: ]{b11303052@ntu.edu.tw}
 \affiliation{Department of Physics, National Taiwan University, Taipei, Taiwan 10617, R.O.C.}
 
@@ -110,8 +110,62 @@ This report provides a comprehensive study of quantum teleportation, covering it
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Introduction to Quantum Teleportation via EPR states}
-\label{sec:Introduction to Quantum Teleportation and EPR states}
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Mathematical background}
+\label{sec:math background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Qubits and the Hilbert Space Formalism}
+The fundamental unit of quantum information is the "qubit". Unlike classical bit, which takes the value of either 0 or 1 at one of the time, a qubit exists in a two-dimensional Hilbert space $\mathcal{H}=\mathrm{span}\{|0\rangle, |1\rangle\} \cong \mathbb{C}^2$, and its state can be described by a unit vector with an orthonormal computational basis $\{|0\rangle, |1\rangle\}$ \begin{equation}
+  |\psi\rangle = \alpha|0\rangle+\beta|1\rangle, \ \alpha, \beta \in \mathbb{C}, \  |\alpha|^2+|\beta|^2=1
+  \label{Eq: qubit}
+\end{equation}
+where $\alpha$ and $\beta$ are the probability amplitudes: measurement yielding $|0\rangle$ or $|1\rangle$ has a probability $|\alpha|^2$ and $|\beta|^2$, respectively  ~\cite{NielsenChuang2000}. Unlike classical bit, a qubit can exist in a superposition of both states, which has no classical analogue. Physical realization of qubits include the two polarization of photon and two energy levels of an electron in an atom. 
+
+\textbf{Bloch Sphere} As an phase factor $e^{i\gamma}$ does not have observable effect, Eq.~\ref{Eq: qubit} can be written in a more general expression \begin{equation}
+  \ket{\psi} = \cos{\frac{\theta}{2}}\ket{0}+e^{i \varphi}\sin{\frac{\theta}{2}}\ket{1}, \ \theta\in[0,\pi], \ \varphi \in[0,2\pi) 
+\end{equation} 
+The two parameters $\theta$ and $\varphi$ define a unique point on the unit three-dimensional sphere, known as the Bloch sphere as shown in Figure~\ref{fig:bloch sphere}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/bloch sphere.png}
+    \caption{Bloch sphere schematic. An arbitrary qubit can be represented by one point on the sphere~\cite{NielsenChuang2000}.}
+    \label{fig:bloch sphere}
+\end{figure} 
+The north pole ($\theta=0$) corresponds to $\ket{0}$, while the south polt corresponds to $\ket{1}$, and every point on the equator represents an equal superposition such as $\ket{+}=(\ket{0}+\ket{1})/\sqrt{2}$. 
+
+\textbf{Multi-qubit systems}. For a system of two qubits, we use the tensor product of the individual Hilbert space $\mathcal{H}_{12}=\mathcal{H}_1\otimes\mathcal{H}_2 \cong \mathbb{C}^4$ to represent the state space, with computational basis kets $\{\ket{00},\ket{01},\ket{10},\ket{11}\}$. Here we use the ordering convention. That is, $\ket{01}=\ket{0}_1\otimes\ket{1}_1$. Similarly, if it is a system of three qubits, then $\ket{010}=\ket{0}_1\otimes\ket{1}_2\otimes\ket{0}_2$. A general two-qubit state takes the form \begin{equation}
+  \ket{\psi}=\alpha_{00}\ket{00}+\alpha_{01}\ket{01}+\alpha_{10}\ket{10}+\alpha_{11}\ket{11}, \ \sum_x|\alpha_x|^2=1
+\end{equation}
+
+\subsection{Entanglement and the Bell States}
+A two-qubit state is called separable if it can be factored as $\ket{\psi \phi}=\ket{\psi}_A\otimes\ket{\psi}_B$. This means that qubit A is in state $\ket{\psi}$, while qubit B is in state $\ket{\phi}$. On the other hand, an entangled state can not be factorized into the product of two single-qubit states. In this case, the quantum state can only be understood as a property of the whole system. 
+The most important entangled states for quantum teleportation are the Bell states~\cite{NielsenChuang2000, Bennett}\begin{equation}
+\begin{aligned}
+|\Phi^+\rangle &= \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle), 
+&\quad |\Phi^-\rangle &= \frac{1}{\sqrt{2}}(|00\rangle - |11\rangle) \\[6pt]
+|\Psi^+\rangle &= \frac{1}{\sqrt{2}}(|01\rangle + |10\rangle), 
+&\quad |\Psi^-\rangle &= \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle).
+\end{aligned}
+\end{equation}
+These four states form an orthonormal basis for the two-qubit Hilbert space. Besides, they are maximally entangled: tracing out either qubit leaves the reduced density matrix $\rho=I/2$, where $I$ is the identity matrix. For example, consider the Bell state $\ket{\Phi^+}_{AB}$, then the corresponding density matrix is $\rho_{AB}=\ket{\Phi^+}\bra{\Phi^+}$. Now, if we only look at the qubit A subsystem, we trace out qubit B to get the reduced density matrix as \begin{equation}
+  \rho_A=\tr_B(\rho_{AB})=\frac{I_A}{2}.
+\end{equation} Similarly, we have $\rho_B=\frac{I_B}{2}$. This implies that when measuring either qubit, we get equal probability of getting $\ket{0}$ or $\ket{1}$. However, the measurement results of system A and system B are perfectly correlated. For example, if system A measure the entangled state and gets $\ket{0}$, then B gets $\ket{0}$. Similarly, if A obtains $\ket{1}$, then B gets $\ket{1}$. That is, each local measurement result is random, but it becomes highly correlated once we look at the system as a whole.
+\subsection{Quantum Measurement and Bell Measurement} The projection postulate state that measurement irreversibly collapses the superposition state into one of its components~\cite{Bouwmeester}. Therefore, measurement on the qubit is a physical process that will disturb the original state. A projective measurement is 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Standard quauntum teleportation protocal}
+\label{sec:protocal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Physical meaning and experimental relevance}
+\label{sec:Topical Study}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -175,22 +229,7 @@ bibliography to cite essential and relevant references (learn from professional 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Using {\TeX} or {\LaTeX} to prepare scientific research documents (theses, papers, reports, and even books) is a common practice for most physicists.  So it is better for you to master this skill as early as possible.
 
-
-One good and easy way to learn it is to start with an example file and try to write something based on it.  If you encounter difficulties, you can always look up books on {\TeX} or Google or ask a chatbot for quick solutions.  You are certainly welcome to refer to some classic books such as Refs.~\cite{knuth1986texbook,lamport1994latex}.
-
-
-Fig.~\ref{fig:example} is a placeholder for showing a plot.  It should be able to take plots of several common types (e.g., PDF, EPS, PNG, etc.).  You can replace the filename with the one you want to use.  If there is no figure to present, you should remove or comment out this part.
-
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[th]
-\includegraphics[width=0.6\textwidth]{Example_Plot.png}
-\caption{Replace this with your plot(s) and the figure caption here.}
-\label{fig:example}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -310,28 +349,33 @@ The rest can be proved by induction.  Suppose the last formula in Eq.~\eqref{eq:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{thebibliography}{99}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\bibitem{knuth1986texbook}
-D.~E. Knuth,
-\textit{The \TeX{} book}
-(Addison-Wesley, Reading, Massachusetts, 1986).
-
-\bibitem{lamport1994latex}
-L.~Lamport,
-\textit{\LaTeX: A Document Preparation System}, 2nd ed.
-(Addison-Wesley, Reading, Massachusetts, 1994).
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{thebibliography}{99}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{thebibliography}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \bibitem{Nielsen}
+% Nielsen, Michael A. and Chuang, Isaac L.,
+
+% \bibitem{knuth1986texbook}
+% D.~E. Knuth,
+% \textit{The \TeX{} book}
+% (Addison-Wesley, Reading, Massachusetts, 1986).
+
+% \bibitem{lamport1994latex}
+% L.~Lamport,
+% \textit{\LaTeX: A Document Preparation System}, 2nd ed.
+% (Addison-Wesley, Reading, Massachusetts, 1994).
 
 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \end{thebibliography}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apsrev}
+\bibliography{reference}
 
 \end{document}
 
