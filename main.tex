@@ -156,7 +156,19 @@ The most important entangled states for quantum teleportation are the Bell state
 These four states form an orthonormal basis for the two-qubit Hilbert space. Besides, they are maximally entangled: tracing out either qubit leaves the reduced density matrix $\rho=I/2$, where $I$ is the identity matrix. For example, consider the Bell state $\ket{\Phi^+}_{AB}$, then the corresponding density matrix is $\rho_{AB}=\ket{\Phi^+}\bra{\Phi^+}$. Now, if we only look at the qubit A subsystem, we trace out qubit B to get the reduced density matrix as \begin{equation}
   \rho_A=\tr_B(\rho_{AB})=\frac{I_A}{2}.
 \end{equation} Similarly, we have $\rho_B=\frac{I_B}{2}$. This implies that when measuring either qubit, we get equal probability of getting $\ket{0}$ or $\ket{1}$. However, the measurement results of system A and system B are perfectly correlated. For example, if system A measure the entangled state and gets $\ket{0}$, then B gets $\ket{0}$. Similarly, if A obtains $\ket{1}$, then B gets $\ket{1}$. That is, each local measurement result is random, but it becomes highly correlated once we look at the system as a whole.
-\subsection{Quantum Measurement and Bell Measurement} The projection postulate state that measurement irreversibly collapses the superposition state into one of its components~\cite{Bouwmeester}. Therefore, measurement on the qubit is a physical process that will disturb the original state. A projective measurement is 
+\subsection{Quantum Measurement and Bell Measurement} The projection postulate state that measurement irreversibly collapses the superposition state into one of its components~\cite{Bouwmeester}. Therefore, measurement on the qubit is a physical process that will disturb the original state. A projective measurement is described by a Hermitian observable $M=\sum_m mP_m$, where $\{P_m\}$ are orthogonal projection operator onto the eigenspace of $M$ with eigenvalue $m$ and satisfy $\sum_m P_m=I$ and $P_mP_{m'}=\delta_{mm'}P_m$. Given a pure state $\ket{\psi}$, the probability of obtaining outcome $m$ is \begin{equation}
+  p(m)=\bra{\psi}P_m\ket{\psi}
+\end{equation}
+and the post-measurement state collapses to~\cite{NielsenChuang2000} \begin{equation}
+  \ket{\psi_m}=\frac{P_m\ket{\psi}}{\sqrt{p(m)}}.
+\end{equation} For example, consider a qubit $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$ with $|\alpha|^2+|\beta|^2=1$. If we do the measurement in the computational basis $\{\ket{0},\ket{1}\}$, then the corresponding projection operators are $P_0=\ket{0}\bra{0}, \ P_1=\ket{1}\bra{1}$. The probability and the post-measurement states of the two possible outcomes are \begin{equation}
+  \begin{aligned}
+    p(0)&=\bra{\psi}P_0\ket{\psi}=|\alpha|^2, 
+&\quad P_0\ket{\psi}&=\ket{0}\bra{0}(\alpha\ket{0}+\beta\ket{1})=\alpha\ket{0}\\
+p(1)&=\bra{\psi}P_1\ket{\psi}=|\beta|^2,
+&\quad  P_1\ket{\psi}&=\ket{1}\bra{1}(\alpha\ket{0}+\beta\ket{1})=\beta\ket{1}\\
+  \end{aligned}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Standard quauntum teleportation protocal}
