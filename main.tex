@@ -161,18 +161,134 @@ These four states form an orthonormal basis for the two-qubit Hilbert space. Bes
 \end{equation}
 and the post-measurement state collapses to~\cite{NielsenChuang2000} \begin{equation}
   \ket{\psi_m}=\frac{P_m\ket{\psi}}{\sqrt{p(m)}}.
+  \label{Eq:post-measurement normalization}
 \end{equation} For example, consider a qubit $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$ with $|\alpha|^2+|\beta|^2=1$. If we do the measurement in the computational basis $\{\ket{0},\ket{1}\}$, then the corresponding projection operators are $P_0=\ket{0}\bra{0}, \ P_1=\ket{1}\bra{1}$. The probability and the post-measurement states of the two possible outcomes are \begin{equation}
   \begin{aligned}
     p(0)&=\bra{\psi}P_0\ket{\psi}=|\alpha|^2, 
 &\quad P_0\ket{\psi}&=\ket{0}\bra{0}(\alpha\ket{0}+\beta\ket{1})=\alpha\ket{0}\\
 p(1)&=\bra{\psi}P_1\ket{\psi}=|\beta|^2,
-&\quad  P_1\ket{\psi}&=\ket{1}\bra{1}(\alpha\ket{0}+\beta\ket{1})=\beta\ket{1}\\
+&\quad  P_1\ket{\psi}&=\ket{1}\bra{1}(\alpha\ket{0}+\beta\ket{1})=\beta\ket{1}.\\
   \end{aligned}
-\end{equation}
+\end{equation} Therefore, a direct measurement gives either 0 or 1, and the original coefficients disappear due to the normalization (Equation~\ref{Eq:post-measurement normalization}), and thus the original qubit state is no longer available.
+In order to maintain the original qubit state, in quantum teleportation, a Bell measurement is performed on a two-qubit system. Similar to the projective measurement, we define the Bell-measurement projectors as \begin{equation}
+  P_k=\ket{\beta_k}\bra{\beta_k}, \ \ket{\beta_k}\in\{\ket{\Psi^{\pm}},\ket{\Phi^{\pm}}\}.
+\end{equation} Thus, a Bell measurement yields one of the Bell states. That is, computational-basis measurement tells us whether each qubit is individually in $\ket{0}$ or $\ket{1}$, while a Bell measurement implies which Bell state the two-qubit system occupies as a whole. 
+\subsection{Pauli Operators and Unitary Correction}
+The Pauli operators are a set of $2\times2$ unitary matrices forming a basis for the space of single-qubit operators~\cite{NielsenChuang2000}:\begin{equation}
+\begin{aligned}
+I = \left(\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right),
+&\qquad X = \sigma_1=\left(\begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right), \\[10pt]
+Z = \sigma_3=\left(\begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right),
+&\qquad Y =\sigma_2= iXZ = \left(\begin{array}{cc} 0 & -i \\ i & 0 \end{array}\right).
+\end{aligned}
+\end{equation}These are the standard single-qubit Pauli operators used in the quantum information. In particular, $X$ is a bit-flip operator ($X\ket{0}=\ket{1},\ X\ket{1}=\ket{0}$), $Z$ acts as a phase-flip operator ($Z\ket{0}=\ket{0}, \ Z\ket{1}=-\ket{1}$), while $Y$ is the same operator as $XZ$ up to a phase factor. Therefore, we will just use $XZ$ in the later protocal operation. These four operators $\{I,\ X,\ Z,\ XZ\}$ will serve as the unitary correction operators for Bob to recover the original quantum state after Alice's Bell measurement.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Standard quauntum teleportation protocal}
 \label{sec:protocal}
+In this chapter, we use the mathmatical tools introduced in the previous chapter to derive the standard quantum teleportation protocal. The goal of the protocol is to transfer an unknown quantum state from Alice to Bob without physically sending the original qubit through a quantum channel. Instead, the protocol uses one shared Bell pair, one Bell measurement, two bits of classical communication, and a conditional Pauli correction.
+
+Suppose Alice has an unknown qubit state \begin{equation}
+  \ket{\psi}_1=\alpha\ket{0}_1+\beta\ket{1}_1,\ |\alpha|^2+|\beta|^2=1.
+\end{equation} Here the subscript 1 labels the unknown input qubit. Alice does not know the coefficients, and she may not measure it directly as the post-measurement state would collapse. Therefore, Alice and Bob share an entangled Bell pair, say \begin{equation}
+  \ket{\Phi^+}_{23}=\frac{1}{\sqrt{2}}(\ket{00}_{23}+\ket{11}_{23}),
+\end{equation} where qubit 2 and 3 are held by Alice and Bob respectively. The total initial state of the three-qubit system is \begin{equation}
+  \begin{aligned}
+    \ket{\Psi}_{123}&=\ket{\psi}_1\ket{\Phi^+}_{23}\\
+    &=\frac{1}{\sqrt{2}}\left(\alpha\ket{000}_{123}+\alpha\ket{011}_{123}+\beta\ket{100}_{123}+\beta\ket{111}_{123}\right),
+  \end{aligned}
+\end{equation}where in the second line of the equation we expand the total qubit state. Since Alice will perform a Bell measurement on qubit 1 and 2, this suggests us to express the computational basis $\ket{}_{12}$ in terms of the Bell states as \begin{equation}
+\begin{aligned}
+\ket{00}_{12}
+&=
+\frac{1}{\sqrt{2}}
+\left(
+\ket{\Phi^+}_{12}
++
+\ket{\Phi^-}_{12}
+\right),
+&\qquad
+\ket{11}_{12}
+&=
+\frac{1}{\sqrt{2}}
+\left(
+\ket{\Phi^+}_{12}
+-
+\ket{\Phi^-}_{12}
+\right),
+\\[10pt]
+\ket{01}_{12}
+&=
+\frac{1}{\sqrt{2}}
+\left(
+\ket{\Psi^+}_{12}
++
+\ket{\Psi^-}_{12}
+\right),
+&\qquad
+\ket{10}_{12}
+&=
+\frac{1}{\sqrt{2}}
+\left(
+\ket{\Psi^+}_{12}
+-
+\ket{\Psi^-}_{12}
+\right).
+\end{aligned}
+\label{Eq:computational_to_Bell}
+\end{equation} Thus, the total state becomes \begin{equation}
+\begin{aligned}
+\ket{\psi}_1\ket{\Phi^+}_{23}
+=
+\frac{1}{2}
+\bigg[
+&\ket{\Phi^+}_{12}
+\left(
+\alpha\ket{0}_3
++
+\beta\ket{1}_3
+\right)
++
+\ket{\Phi^-}_{12}
+\left(
+\alpha\ket{0}_3
+-
+\beta\ket{1}_3
+\right)
+\\
+&+
+\ket{\Psi^+}_{12}
+\left(
+\beta\ket{0}_3
++
+\alpha\ket{1}_3
+\right)
++
+\ket{\Psi^-}_{12}
+\left(
+-\beta\ket{0}_3
++
+\alpha\ket{1}_3
+\right)
+\bigg].
+\end{aligned}
+\label{Eq:teleportation_expanded_Bell_basis}
+\end{equation} We may further rewrite this expression using the Pauli operators as \begin{equation}
+\ket{\psi}_1\ket{\Phi^+}_{23}
+=
+\frac{1}{2}
+\left[
+\ket{\Phi^+}_{12}\ket{\psi}_3
++
+\ket{\Phi^-}_{12}Z\ket{\psi}_3
++
+\ket{\Psi^+}_{12}X\ket{\psi}_3
++
+\ket{\Psi^-}_{12}XZ\ket{\psi}_3
+\right].
+\label{Eq:teleportation_identity}
+\end{equation}
+This equation is the central identity of quantum teleportation. It shows that when qubits 1 and 2 are written in the Bell basis, Bob's qubit 3 is related to the original input state by one of four possible Pauli operations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
