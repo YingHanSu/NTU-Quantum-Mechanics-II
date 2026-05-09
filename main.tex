@@ -377,22 +377,11 @@ The physical execution initiates at the EPR source, where the non-local quantum 
 \subsection{Implementation of the Dual-Degree-of-Freedom Setup}
 
 \subsubsection{\textbf{The EPR Source: Converting Light into Entanglement}}
-Entanglement is generated via Type-II Spontaneous Parametric Down-Conversion (SPDC). A 200 mW ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this polarization entanglement is deterministically converted into path entanglement via birefringent calcite crystals (C), which split incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
+Entanglement is generated via Type-II spontaneous parametric down-conversion (SPDC). Specifically, a 200 mW, 351.1 nm ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this initial polarization entanglement is deterministically converted into spatial path entanglement via birefringent calcite crystals (C), which split the incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
 $$|\Psi\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)$$
 
-Crucially, photon 1 routes toward Alice’s station, while photon 2 traverses backreflected paths $a_2$ and $b_2$ through the BBO crystal toward Bob.
+Crucially, photon 1 is routed toward Alice's station, while photon 2 traverses backreflected paths $a_2$ and $b_2$ through the BBO crystal toward Bob.
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|l|l|l|}
-        \hline
-        \textbf{Component} & \textbf{Physical Input} & \textbf{Key Transformation Outcome} \\ \hline
-        \textbf{BBO Crystal} & 351.1 nm UV Laser & Type-II SPDC: Generates polarization-entangled pairs at 702.2 nm. \\ \hline
-        \textbf{Calcite Crystals} & Polarization-entangled photons & Conversion of polarization entanglement into path entanglement. \\ \hline
-    \end{tabular}
-    \caption{Key components and transformations at the EPR source.}
-    \label{tab:epr_source}
-\end{table}
 
 \begin{figure}[h]
     \centering
@@ -442,20 +431,7 @@ Bob employs \textit{passive reconstruction}. Rather than dynamically rotating th
 \end{itemize}
 
 \subsection{The Verdict: Beating the Classical Limit}
-To validate quantum teleportation, the experimental fidelity ($S$)—the average probability of the teleported state passing verification—must strictly exceed the classical communication limit of 0.75. Any fidelity surpassing this threshold proves entanglement was leveraged as a non-local resource.
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|l|l|l|}
-        \hline
-        \textbf{Metric} & \textbf{Classical Threshold} & \textbf{Experimental Result} \\ \hline
-        \textbf{Average Fidelity ($S$)} & 0.75 & 0.853 $\pm$ 0.012 \\ \hline
-    \end{tabular}
-    \caption{Comparison of classical limits with experimental results.}
-    \label{tab:fidelity_comparison}
-\end{table}
-
-The observed fidelity of 0.853 exceeds the classical bound by eight standard deviations. This robustly confirms that the dual-degree-of-freedom architecture functioned as a unified quantum processor, providing definitive empirical proof of quantum teleportation.
+To rigorously validate quantum teleportation, the experimental fidelity ($S$)—representing the average probability of the teleported state passing verification—must strictly exceed the classical communication limit of $0.75$. Surpassing this threshold empirically proves that entanglement was utilized as a non-local resource.In the 1998 experiment, $S$ was derived through a comprehensive sampling process across three equally spaced linear polarization settings ($0^\circ, 120^\circ, \text{ and } -120^\circ$). To ensure a representative result on the Bloch sphere, each of these three states was assigned a weight of $1/3$, while each of the four possible Bell state measurement outcomes was weighted equally at $1/4$. The final observed fidelity of $0.853 \pm 0.012$ exceeds the classical bound by eight standard deviations. This result robustly confirms that the dual-degree-of-freedom architecture functioned as a unified quantum processor, providing definitive empirical proof of the successful teleportation of unknown pure quantum states. 
 \label{sec:Experimental Implementation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
