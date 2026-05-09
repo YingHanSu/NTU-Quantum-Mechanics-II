@@ -288,13 +288,78 @@ Suppose Alice has an unknown qubit state \begin{equation}
 \right].
 \label{Eq:teleportation_identity}
 \end{equation}
-This equation is the central identity of quantum teleportation. It shows that when qubits 1 and 2 are written in the Bell basis, Bob's qubit 3 is related to the original input state by one of four possible Pauli operations.
+This equation is the central identity of quantum teleportation. It shows that when qubits 1 and 2 are written in the Bell basis, Bob's qubit 3 is related to the original input state by one of four possible Pauli operations. Alice now perform a Bell measurement on qubits 1 and 2. According to the projection postulate, the total state collapses into one of the four Bell states with equal probability. If Alice obtains the outcome $\ket{\Phi^+}_{12}$, then Bob's qubit is simply $\ket{\psi}_3$. With no extra correction, the unknown qubit is teleported to Bob. If Alice get $\ket{\Phi^-}_{12}$, then Bob's qubit is $Z\ket{\psi}_3$. Bob need to apply $Z$ so that $Z(Z\ket{\psi}_3)=Z^2\ket{\psi}_3=\ket{\psi}_3$. Similarly, if Alice obtains $\ket{\Psi^+}_{12}$, Bob gets $X\ket{\psi}_3$ and need to perform $X$ so that $X(X\ket{\psi}_3)=X^2\ket{\psi}_3=\ket{\psi}_3$. Finally, if Alice obtains $\ket{\Psi^-}_{12}$, Bob apply $ZX$ such that $ZX(XZ\ket{\psi}_3)=\ket{\psi}_3$. These four cases can be summarized into the following table as \begin{equation}
+\begin{array}{c|c|c}
+\text{Alice's Bell outcome} 
+& \text{Bob's state before correction} 
+& \text{Bob's correction} \\
+\hline
+\ket{\Phi^+}_{12} & \ket{\psi}_3 & I \\
+\ket{\Phi^-}_{12} & Z\ket{\psi}_3 & Z \\
+\ket{\Psi^+}_{12} & X\ket{\psi}_3 & X \\
+\ket{\Psi^-}_{12} & XZ\ket{\psi}_3 & ZX
+\end{array}
+\label{Eq:teleportation_correction_table}
+\end{equation}
+After Alice's measurement, she need to tell Bob which one of these four Bell states she got. Since one classical bit has two possible values, 0 and 1, two classical bits can represent four possible messages: 00, 01, 10, and 11. This is enough to label the four Bell-measurement outcomes. For example, they may agree that 00 correspons to $\ket{\Phi^+}_{12}$. That is, with a two-classical-bit channel, Alice can transport her measurement result to Bob so that he can perform the corresponding correction operation to get the original unknown qubit state. In source language, the teleportation protocal can be summarized as
+\begin{equation}
+  1\ \mathrm{ebit}+2\ \mathrm{classical \ bits}\to 1 \mathrm{transmitted\ qubit}.
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Physical meaning and experimental relevance}
-\label{sec:Topical Study}
+\label{sec:Physical meaning}
+After deriving the standard teleportation protocol, it is important to clarify what the protocol does and does not imply physically. Quantum teleportation transfers an unknown quantum state from Alice's qubit to Bob's qubit, but it does not transfer matter, does not create a second copy of the state, and does not allow faster-than-light communication. The protocol works only because of the shared entangled pair and a classical bit channel. In this section, we discuss these physical implications and then connect the ideal protocol to experimental realization.
+\subsection{No-Cloning}
+Quantum teleportation does not create a second copy of the unknown quantum state. Although Bob's final qubit becomes $\ket{\psi}_3 = \alpha\ket{0}_3 + \beta\ket{1}_3$, Alice's original qubit is no longer available after the Bell measurement. The Bell measurement projects qubits 1 and 2 into one of the four Bell 
+states, and therefore irreversibly destroys the original unknown state 
+on Alice's side. This is why quantum teleportation is consistent with the no-cloning 
+theorem. The no-cloning theorem, first formulated by Wootters and 
+Zurek~\cite{Wootters1982} and independently by Dieks~\cite{Dieks1982}, 
+states that it is impossible to make an exact copy of an arbitrary 
+unknown quantum state. The proof is straightforward. Suppose there 
+exists a universal unitary cloning machine $U$ such that
+$U\ket{\psi}\ket{s} = \ket{\psi}\ket{\psi}$ for any unknown state $\ket{\psi}$, where $\ket{s}$ is a blank initial 
+state. If the same machine can also clone another state $\ket{\phi}$, 
+then $U\ket{\phi}\ket{s} = \ket{\phi}\ket{\phi}.$
+Taking the inner product of these two equations gives
+$\braket{\psi|\phi} = \braket{\psi|\phi}^{2}.$
+This condition is only satisfied when $\braket{\psi|\phi}=0$ or 
+$\braket{\psi|\phi}=1$. In other words, the two states must be either 
+orthogonal or identical. Therefore, no single unitary operation can 
+clone an arbitrary unknown quantum state~\cite{NielsenChuang2000}.
+
+Teleportation avoids this contradiction because it does not copy the 
+state. Instead, the quantum information initially contained in qubit 1 
+is transferred to qubit 3, while the original state at Alice's side is 
+destroyed by measurement. Therefore, teleportation should be understood 
+as state transfer rather than state duplication.
+\subsection{No Faster-Than-Light Communication}
+Quantum teleportation also does not allow faster-than-light 
+communication. Although the shared Bell pair provides nonclassical correlations between Alice and Bob, Bob cannot recover the unknown state before receiving Alice's classical message. That is, Bob needs Alice's message so that he knows what operation he should apply to recover the unkown qubit. 
+This can be made more precise by looking at Bob's reduced density matrix 
+before the classical message arrives. Since the four Bell-measurement 
+outcomes occur with equal probability, Bob's local state is an average 
+over the four possible states:
+\begin{equation}
+    \rho_3 = \frac{1}{4}\left(
+    \ket{\psi}\bra{\psi}
+    + Z\ket{\psi}\bra{\psi}Z
+    + X\ket{\psi}\bra{\psi}X
+    + XZ\ket{\psi}\bra{\psi}ZX
+    \right).
+\end{equation}
+For an arbitrary qubit $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$, 
+this average becomes
+\begin{equation}
+    \rho_3 = \frac{I}{2}.
+\end{equation}
+Thus, before receiving Alice's classical message, Bob's local state is 
+completely mixed and independent of $\alpha$ and $\beta$. Any 
+measurement Bob performs locally gives random results and reveals no information about the unknown input state. Bennett et al.~\cite{Bennett} emphasized this point in the original teleportation paper: if Bob tries to complete the protocol by guessing Alice's classical message before it arrives, his state is only a maximally mixed state and gives no information about the input state.
+\subsection{Security of the Classical Message}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Experimental Implementation via Dual-Photon Entanglement}
