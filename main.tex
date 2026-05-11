@@ -433,194 +433,25 @@ Bob employs \textit{passive reconstruction}. Rather than dynamically rotating th
 To rigorously validate quantum teleportation, the experimental fidelity ($S$)—representing the average probability of the teleported state passing verification—must strictly exceed the classical communication limit of $0.75$. Surpassing this threshold empirically proves that entanglement was utilized as a non-local resource.In the 1998 experiment, $S$ was derived through a comprehensive sampling process across three equally spaced linear polarization settings ($0^\circ, 120^\circ, \text{ and } -120^\circ$). To ensure a representative result on the Bloch sphere, each of these three states was assigned a weight of $1/3$, while each of the four possible Bell state measurement outcomes was weighted equally at $1/4$. The final observed fidelity of $0.853 \pm 0.012$ exceeds the classical bound by eight standard deviations. This result robustly confirms that the dual-degree-of-freedom architecture functioned as a unified quantum processor, providing definitive empirical proof of the successful teleportation of unknown pure quantum states. 
 \label{sec:Experimental Implementation}
 
+
+
+\section{Variants of Quantum Teleportation}
+
+\subsection{Optical Modes System: Continuous-Variable Teleportation}
+\subsection{Atomics Ensembles and Trapped Ion System}
+\subsection{Solid-State System}
+
+
+\section{Advances in Quantum Teleportation}
+\label{sec:Advances in Quantum Teleportation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Section}
-%\label{sec:section}
 
-\section{Appliications and real-world relevance of quantum teleportation}
-\label{sec:About the Report}
+\subsection{Quantum Teleportation for Quantum Communication}
+
+\subsection{Quantum Gate Teleportation for Quantum Computing}
+
+\section{Outlook of Quantum Teleportation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Basic Structure of Report}
-\label{sec:Basic Structure of Report}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-Prepare a report {\it in} {\TeX} and {\it in English} that contains basically the following sections:
-\begin{itemize}
-\item
-introduction or motivations of the issue (e.g., what is the problem or question, why this topic is physically interesting, historical notes, etc.);
-
-\item
-model or framework for later discussions or analysis (e.g., defining notations, reviewing basic theory background, providing key equations, etc.);
-
-\item
-derivation in sufficient detail, leaving lengthy stuff to appendices, and discussions of physics in your results (e.g., deriving from the above-mentioned basics to the final results that will answer the initial question, providing more physical understanding about your results, discussing implications, comparing them with empirical data, etc.);
-
-\item
-summary and conclusions (e.g., reminding readers of the highlights in your study/report);
-
-\item
-using figures and tables whenever appropriate or necessary (in particular, you should make it clear whether the plots or numbers are computed by yourselves or copied from the references); and
-
-\item
-bibliography to cite essential and relevant references (learn from professional papers about how to do it properly).
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{About {\TeX}}
-\label{sec:About TeX}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Writing Style}
-\label{sec:Writing Style}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-You should write {\it in your own words} and provide {\it critical thoughts} on the topic.
-
-
-Here are some additional tips about your writing:
-\begin{itemize}
-\item
-Make good use of modern technology to help you {\it check spelling and grammatical errors}.  Pay attention to the proper usage of punctuation (including those in the equations).
-
-\item
-Be sure to clearly {\it define your symbols and notations}.
-
-\item
-Be {\it narrative} rather than simply showing a pile of equations.  Provide a physical understanding of factors or terms in the derived results.
-
-\item
-Show sufficiently detailed steps in derivations, so that people at your level of understanding can follow without difficulty.  In the case of tedious or trivial algebraic manipulations, you can schematically outline or describe how they are done.
-
-\item
-Role models would be most of the good textbooks and the research papers you have studied.
-\end{itemize}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{appendix}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-\section{Useful Formulas}
-\label{sec:useful_formulas}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-In the appendices, you can provide tedious derivations or detailed discussions that are not crucial for the discussions in the main text.
-
-First, we have for $a > 0$
-\begin{align}
-\begin{split}
-G_0
-\equiv
-\int_{-\infty}^{+\infty} e^{- \frac12 ax^2} dx
-&= \sqrt{\frac{2\pi}{a}}
-\\
-G_2
-\equiv
-\int_{-\infty}^{+\infty} x^2 e^{- \frac12 ax^2} dx
-&= \sqrt{\frac{2\pi}{a}} \frac{1}{a}
-\\
-\mbox{or}~~
-G_{2n}
-\equiv
-\int_{-\infty}^{+\infty} x^{2n} e^{- \frac12 ax^2} dx
-&= \sqrt{\frac{2\pi}{a}} \frac{1}{a^n} (2n-1)(2n-3) \cdots 3 \cdot 1
-\end{split}
-\label{eq:standard-gaussian-integrals}
-\end{align}
-in general for $n \in {\mathbb N} \cup \{ 0 \}$, where the factor of $1/2$ in the exponent is common in physics.  The proof goes as follows:
-\begin{align}
-\begin{split}
-(G_0)^2 
-&= 
-\left( \int_{-\infty}^{+\infty} e^{- \frac12 ax^2} dx \right)
-\cdot
-\left( \int_{-\infty}^{+\infty} e^{- \frac12 ay^2} dy \right)
-=
-\int_0^{2\pi} d\phi \int_0^{\infty} dr r e^{- \frac12 ar^2}
-\\
-&=
-2\pi \cdot \frac{1}{a} \int_0^{\infty} du e^{-u}
-= \frac{2\pi}{a} \left[ - e^{-u} \right]_0^\infty
-= \frac{2\pi}{a}
-\\
-\Rightarrow~
-G_0
-&=
-\sqrt{\frac{2\pi}{a}}
-\qquad \mbox{(obviously not the other solution)}
-~.
-\end{split}
-\end{align}
-The rest can be proved by induction.  Suppose the last formula in Eq.~\eqref{eq:standard-gaussian-integrals} is true for $n = k$, then for $n = k+1$ we have
-\begin{align}
-\begin{split}
-&
-\int_{-\infty}^{+\infty} x^{2(k+1)} e^{- \frac12 ax^2} dx
-=
-\int_{-\infty}^{+\infty} x^{2k} x^2 e^{- \frac12 ax^2} dx
-=
-\int_{-\infty}^{+\infty} x^{2k} \left( -2 \frac{d}{da} \right) e^{- \frac12 ax^2} dx
-\\
-&=
-\left( -2 \frac{d}{da} \right) G_{2k}
-= \sqrt{2\pi} (2k-1)(2k-3) \cdots 3 \cdot 1 \left( -2 \frac{d}{da} \right) a^{-(k+1/2)}
-\\
-&= \sqrt{2\pi} (2k+1)(2k-1) \cdots 3 \cdot 1 a^{-[(k+1)+1/2]}
-~.
-\end{split}
-\end{align}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{appendix}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{thebibliography}{99}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-% \bibitem{Nielsen}
-% Nielsen, Michael A. and Chuang, Isaac L.,
-
-% \bibitem{knuth1986texbook}
-% D.~E. Knuth,
-% \textit{The \TeX{} book}
-% (Addison-Wesley, Reading, Massachusetts, 1986).
-
-% \bibitem{lamport1994latex}
-% L.~Lamport,
-% \textit{\LaTeX: A Document Preparation System}, 2nd ed.
-% (Addison-Wesley, Reading, Massachusetts, 1994).
-
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \end{thebibliography}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliographystyle{apsrev}
 \bibliography{reference}
