@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.31)  4 MAY 2026 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.31)  11 MAY 2026 11:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1024,33 +1024,93 @@ Overfull \hbox (0.87357pt too wide) detected at line 10
  []
 
 
-Overfull \hbox (0.87357pt too wide) detected at line 11
- [][]\T1/cmr/m/n/12 8[][]
+Overfull \hbox (6.74713pt too wide) detected at line 11
+ [][]\T1/cmr/m/n/12 11[][]
  []
 
 
-Overfull \hbox (0.87357pt too wide) detected at line 12
- [][]\T1/cmr/m/n/12 8[][]
+Overfull \hbox (6.74713pt too wide) detected at line 12
+ [][]\T1/cmr/m/n/12 11[][]
  []
 
 
-Overfull \hbox (0.87357pt too wide) detected at line 13
- [][]\T1/cmr/m/n/12 9[][]
+Overfull \hbox (6.74713pt too wide) detected at line 13
+ [][]\T1/cmr/m/n/12 12[][]
  []
 
 
-Overfull \hbox (0.87357pt too wide) detected at line 14
- [][]\T1/cmr/m/n/12 9[][]
+Overfull \hbox (6.74713pt too wide) detected at line 14
+ [][]\T1/cmr/m/n/12 12[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 15
+ [][]\T1/cmr/m/n/12 13[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 16
- [][]\T1/cmr/m/n/12 10[][]
+ [][]\T1/cmr/m/n/12 13[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 17
- [][]\T1/cmr/m/n/12 11[][]
+ [][]\T1/cmr/m/n/12 13[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 18
+ [][]\T1/cmr/m/n/12 13[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 19
+ [][]\T1/cmr/m/n/12 14[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 20
+ [][]\T1/cmr/m/n/12 15[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 21
+ [][]\T1/cmr/m/n/12 16[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 22
+ [][]\T1/cmr/m/n/12 16[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 23
+ [][]\T1/cmr/m/n/12 17[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 24
+ [][]\T1/cmr/m/n/12 17[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 25
+ [][]\T1/cmr/m/n/12 17[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 26
+ [][]\T1/cmr/m/n/12 17[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 28
+ [][]\T1/cmr/m/n/12 18[][]
+ []
+
+
+Overfull \hbox (6.74713pt too wide) detected at line 29
+ [][]\T1/cmr/m/n/12 19[][]
  []
 
 )
@@ -1058,7 +1118,7 @@ Overfull \hbox (6.74713pt too wide) detected at line 17
 \openout5 = `main.toc'.
 
  [2] [3]
-<figures/bloch sphere.png, id=155, 335.75438pt x 321.2pt>
+<figures/bloch sphere.png, id=227, 335.75438pt x 321.2pt>
 File: figures/bloch sphere.png Graphic file (type png)
 <use figures/bloch sphere.png>
 Package pdftex.def Info: figures/bloch sphere.png  used on input line 135.
@@ -1067,30 +1127,36 @@ Package pdftex.def Info: figures/bloch sphere.png  used on input line 135.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./figures/bloch sphere.png>] [6] [7] [8] [9] (main.bbl [10]
+[4] [5 <./figures/bloch sphere.png>] [6] [7] [8] [9] [10] [11] [12] [13]
+<figures/setup_diagram.jpg, id=322, 1284.8pt x 1041.8925pt>
+File: figures/setup_diagram.jpg Graphic file (type jpg)
+<use figures/setup_diagram.jpg>
+Package pdftex.def Info: figures/setup_diagram.jpg  used on input line 387.
+(pdftex.def)             Requested size: 234.0pt x 189.75827pt.
+ [14 <./figures/setup_diagram.jpg>] [15] [16] [17] [18] (main.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 33.
  (C:\Users\Henry Su\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)) [11] (main.aux)
+)) [19] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 16E01E90AD30D9D0947AFE1AEB2C4514;2393.
+(rerunfilecheck)             Checksum: 0688FD5F97489775BF8C49945A33AB7C;5938.
  ) 
 Here is how much of TeX's memory you used:
- 32612 strings out of 474486
- 646609 string characters out of 5742303
- 1950542 words of memory out of 5000000
- 54239 multiletter control sequences out of 15000+600000
- 582619 words of font info for 110 fonts, out of 8000000 for 9000
+ 32695 strings out of 474486
+ 647927 string characters out of 5742303
+ 1948542 words of memory out of 5000000
+ 54281 multiletter control sequences out of 15000+600000
+ 584775 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,107p,833b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (11 pages, 311947 bytes).
+ 99i,16n,107p,1144b,578s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (19 pages, 538782 bytes).
 PDF statistics:
- 658 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 872 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 375 words of extra memory for PDF output out of 10000 (max. 10000000)
 
