@@ -1,9 +1,16 @@
 # Fdb version 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 ["bibtex main"] 1778571250.80453 "main.aux" "main.bbl" "main" 1778571252.34709 0
   "./reference.bib" 1778571248 2395 bfbe06912de4b186b307862ed43768dd ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
   "main.aux" 1778571251 6877 3c5ec2a8f7a6552f1c8802a96b878dd6 "pdflatex"
+=======
+["bibtex main"] 1778570982.63952 "main.aux" "main.bbl" "main" 1778570984.28646 0
+  "./reference.bib" 1778570980 3904 6f790042398da5923047d51a5fe46d0a ""
+  "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
+  "main.aux" 1778570983 7315 a71b47ada65150398e0f97f3e2201874 "pdflatex"
+>>>>>>> 9442969 (update on 6 and 7)
 =======
 ["bibtex main"] 1778570982.63952 "main.aux" "main.bbl" "main" 1778570984.28646 0
   "./reference.bib" 1778570980 3904 6f790042398da5923047d51a5fe46d0a ""
@@ -15,7 +22,11 @@
   "main.blg"
   (rewritten before read)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ["pdflatex"] 1778571250.99827 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1778571252.34744 0
+=======
+["pdflatex"] 1778570982.83893 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1778570984.28682 0
+>>>>>>> 9442969 (update on 6 and 7)
 =======
 ["pdflatex"] 1778570982.83893 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1778570984.28682 0
 >>>>>>> 9442969 (update on 6 and 7)
@@ -294,6 +305,7 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/ytableau/ytableau.sty" 1623755617 9205 02f9b2cccde94c720189905bc832b940 ""
 <<<<<<< HEAD
+<<<<<<< HEAD
   "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1778571248 30004 97eb40f09dee1748fadeab637e4d069d ""
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
@@ -306,11 +318,19 @@
   "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1778570980 52537 838da3cda2b3f400cf9edaf21c9976c7 ""
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
+=======
+  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1778570980 52537 838da3cda2b3f400cf9edaf21c9976c7 ""
+  "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
+  "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
+>>>>>>> 9442969 (update on 6 and 7)
   "main.aux" 1778570983 7315 a71b47ada65150398e0f97f3e2201874 "pdflatex"
   "main.bbl" 1778570982 5180 51af2c10c9c8bcfdb8a9ea01d4de7bf9 "bibtex main"
   "main.out" 1778570983 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
   "main.tex" 1778570980 52537 838da3cda2b3f400cf9edaf21c9976c7 ""
   "main.toc" 1778570983 2836 7aeabc3d2fa7370903706a196f90e7bc "pdflatex"
+<<<<<<< HEAD
+>>>>>>> 9442969 (update on 6 and 7)
+=======
 >>>>>>> 9442969 (update on 6 and 7)
   (generated)
   "main.aux"
