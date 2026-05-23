@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1779555581.0796 "main.aux" "main.bbl" "main" 1779555582.91222 0
-  "./reference.bib" 1779552694 5891 14a0ae91e974d83b3bb2de47689620c6 ""
+["bibtex main"] 1779562043.16463 "main.aux" "main.bbl" "main" 1779562045.20217 0
+  "./reference.bib" 1779559735 6298 3309b4363b479590f8fa51f3cd897f6c ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
-  "main.aux" 1779555582 10152 b325b190408e042949c060c7573df5f8 "pdflatex"
+  "main.aux" 1779562044 11710 bd175ad39e6fe1d11d0b1f274dcf4776 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779555581.27815 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779555582.91259 0
+["pdflatex"] 1779562043.36989 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779562045.20256 0
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778680528 81162 40a638658ef6d05880d7c04284bf5193 ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1778468758 38336 784b5a8c466227b7d62b9d5bedcf4b2e ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1776061298 28976 e5651454bf55e7e43b9c9bfe9d36aeff ""
@@ -284,19 +284,22 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/ytableau/ytableau.sty" 1623755617 9205 02f9b2cccde94c720189905bc832b940 ""
-  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779555578 62931 5dbb3339336fbb14ba2e3d4e72e9d316 ""
+  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779562040 60297 36709b59a2448e9efd8a17aa6595b214 ""
   "figures/EPR via atom setup.png" 1779542048 32478 dca18bd26df694c435833cad66a0fc7f ""
+  "figures/Groud to satellite.png" 1779558244 927139 1e8c5aed58a7a0c69592caeaab009b32 ""
+  "figures/QGT CZgate.png" 1779561058 112548 fecad31e4369ba50ef725aab6af99dae ""
+  "figures/QGT.png" 1779560342 201490 4a49703ce34b518782445f7d45b7c60e ""
   "figures/Quantum vs classical.png" 1779539286 69383 16d1e41bf26e56cf7c6ac81a2916d364 ""
   "figures/Unconditional teleportation_setup.png" 1779535013 49130 3f5ff243e48b165637f322c863c19033 ""
   "figures/atom and light set up.png" 1779542374 139723 dae643a947d3233bc84657c226efe914 ""
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
   "figures/solid state system setup.png" 1779553177 129839 c78b1138370519bfe51431be5ee1c47b ""
-  "main.aux" 1779555582 10152 b325b190408e042949c060c7573df5f8 "pdflatex"
-  "main.bbl" 1779555581 6227 0ea609fd99aa05cf2401afc7b05903f5 "bibtex main"
-  "main.out" 1779555582 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
-  "main.tex" 1779555578 62931 5dbb3339336fbb14ba2e3d4e72e9d316 ""
-  "main.toc" 1779555582 2836 82ac30779e8ed327f8cdd4c2440b8a87 "pdflatex"
+  "main.aux" 1779562044 11710 bd175ad39e6fe1d11d0b1f274dcf4776 "pdflatex"
+  "main.bbl" 1779562043 7085 3e81b0d6d6601d7407b5e7f0886d68cd "bibtex main"
+  "main.out" 1779562044 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
+  "main.tex" 1779562040 60297 36709b59a2448e9efd8a17aa6595b214 ""
+  "main.toc" 1779562044 2836 52c039eef388e9c2f1d60c24cdd5ff0f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
