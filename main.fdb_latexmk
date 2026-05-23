@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1779541555.77043 "main.aux" "main.bbl" "main" 1779541569.91708 0
-  "./reference.bib" 1779541336 5450 24e8b801f0a99c2b87782f701fbdf72b ""
+["bibtex main"] 1779555581.0796 "main.aux" "main.bbl" "main" 1779555582.91222 0
+  "./reference.bib" 1779552694 5891 14a0ae91e974d83b3bb2de47689620c6 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
-  "main.aux" 1779541569 9203 3910bdb8468e323e11be626d44d42551 "pdflatex"
+  "main.aux" 1779555582 10152 b325b190408e042949c060c7573df5f8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779541568.37664 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779541569.91746 0
+["pdflatex"] 1779555581.27815 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779555582.91259 0
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778680528 81162 40a638658ef6d05880d7c04284bf5193 ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1778468758 38336 784b5a8c466227b7d62b9d5bedcf4b2e ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1776061298 28976 e5651454bf55e7e43b9c9bfe9d36aeff ""
@@ -81,14 +81,12 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136765053 520 4889cce2180234b97cad636b6039c722 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
-  "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1247596666 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
@@ -286,16 +284,19 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/ytableau/ytableau.sty" 1623755617 9205 02f9b2cccde94c720189905bc832b940 ""
-  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779541567 67385 920ab250712da8b5457f1e33dacd5919 ""
+  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779555578 62931 5dbb3339336fbb14ba2e3d4e72e9d316 ""
+  "figures/EPR via atom setup.png" 1779542048 32478 dca18bd26df694c435833cad66a0fc7f ""
   "figures/Quantum vs classical.png" 1779539286 69383 16d1e41bf26e56cf7c6ac81a2916d364 ""
   "figures/Unconditional teleportation_setup.png" 1779535013 49130 3f5ff243e48b165637f322c863c19033 ""
+  "figures/atom and light set up.png" 1779542374 139723 dae643a947d3233bc84657c226efe914 ""
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
-  "main.aux" 1779541569 9203 3910bdb8468e323e11be626d44d42551 "pdflatex"
-  "main.bbl" 1779541555 7035 eac7c66aaf519823db38f31fc9c5f906 "bibtex main"
-  "main.out" 1779541569 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
-  "main.tex" 1779541567 67385 920ab250712da8b5457f1e33dacd5919 ""
-  "main.toc" 1779541569 2836 cc261525aba3eeaa6cdbde442203f22c "pdflatex"
+  "figures/solid state system setup.png" 1779553177 129839 c78b1138370519bfe51431be5ee1c47b ""
+  "main.aux" 1779555582 10152 b325b190408e042949c060c7573df5f8 "pdflatex"
+  "main.bbl" 1779555581 6227 0ea609fd99aa05cf2401afc7b05903f5 "bibtex main"
+  "main.out" 1779555582 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
+  "main.tex" 1779555578 62931 5dbb3339336fbb14ba2e3d4e72e9d316 ""
+  "main.toc" 1779555582 2836 82ac30779e8ed327f8cdd4c2440b8a87 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

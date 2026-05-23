@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.31)  23 MAY 2026 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.31)  24 MAY 2026 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1100,32 +1100,32 @@ Overfull \hbox (6.74713pt too wide) detected at line 25
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 26
- [][]\T1/cmr/m/n/12 26[][]
+ [][]\T1/cmr/m/n/12 25[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 27
- [][]\T1/cmr/m/n/12 29[][]
+ [][]\T1/cmr/m/n/12 28[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 28
- [][]\T1/cmr/m/n/12 29[][]
+ [][]\T1/cmr/m/n/12 28[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 29
- [][]\T1/cmr/m/n/12 31[][]
+ [][]\T1/cmr/m/n/12 30[][]
  []
 
 
 Overfull \hbox (6.74713pt too wide) detected at line 30
- [][]\T1/cmr/m/n/12 34[][]
+ [][]\T1/cmr/m/n/12 33[][]
  []
 
 [2]
 Overfull \hbox (6.74713pt too wide) detected at line 31
- [][]\T1/cmr/m/n/12 34[][]
+ [][]\T1/cmr/m/n/12 33[][]
  []
 
 )
@@ -1160,11 +1160,33 @@ File: figures/Quantum vs classical.png Graphic file (type png)
 <use figures/Quantum vs classical.png>
 Package pdftex.def Info: figures/Quantum vs classical.png  used on input line 579.
 (pdftex.def)             Requested size: 468.0pt x 174.27638pt.
- [21 <./figures/Quantum vs classical.png>] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31]
+ [21 <./figures/Quantum vs classical.png>]
+<figures/EPR via atom setup.png, id=410, 252.945pt x 152.82094pt>
+File: figures/EPR via atom setup.png Graphic file (type png)
+<use figures/EPR via atom setup.png>
+Package pdftex.def Info: figures/EPR via atom setup.png  used on input line 602.
+(pdftex.def)             Requested size: 234.0pt x 141.37811pt.
+ [22 <./figures/EPR via atom setup.png>] [23]
+<figures/atom and light set up.png, id=432, 1005.7575pt x 508.90125pt>
+File: figures/atom and light set up.png Graphic file (type png)
+<use figures/atom and light set up.png>
+Package pdftex.def Info: figures/atom and light set up.png  used on input line 658.
+(pdftex.def)             Requested size: 351.0pt x 177.59784pt.
+ [24 <./figures/atom and light set up.png>]
+<figures/solid state system setup.png, id=443, 646.66594pt x 368.87813pt>
+File: figures/solid state system setup.png Graphic file (type png)
+<use figures/solid state system setup.png>
+Package pdftex.def Info: figures/solid state system setup.png  used on input line 706.
+(pdftex.def)             Requested size: 351.0pt x 200.22125pt.
 
-Package natbib Warning: Citation `Main2025Distributed' on page 32 undefined on input line 839.
 
-[32] (main.bbl [33]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25] [26 <./figures/solid state system setup.png>] [27] [28] [29] [30]
+
+Package natbib Warning: Citation `Main2025Distributed' on page 31 undefined on input line 838.
+
+[31] (main.bbl [32]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 33.
  (C:\Users\Henry Su\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -1172,7 +1194,7 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 Package natbib Warning: There were undefined citations.
 
-[34] (main.aux)
+[33] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1181,17 +1203,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FBBFE371717E5754C2176EC0F97427B2;6838.
  ) 
 Here is how much of TeX's memory you used:
- 32786 strings out of 474486
- 649584 string characters out of 5742303
+ 32795 strings out of 474486
+ 650239 string characters out of 5742303
  1944542 words of memory out of 5000000
- 54319 multiletter control sequences out of 15000+600000
+ 54332 multiletter control sequences out of 15000+600000
  584775 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,1144b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 718493 bytes).
+ 99i,12n,107p,1144b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Henry Su\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (33 pages, 905787 bytes).
 PDF statistics:
- 1076 PDF objects out of 1200 (max. 8388607)
- 130 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1068 PDF objects out of 1200 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 424 words of extra memory for PDF output out of 10000 (max. 10000000)
 

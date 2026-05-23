@@ -593,7 +593,18 @@ The quality of teleportation is limited by finite squeezing and detector ineffic
 
 Unlike using photons as the source of quantum information like we discussed above, we can also use atoms as the information carriers.
 Atomic ensambles in nature are better suited for local storage and synchronization, while photons are better suited for long-distance transmission. 
-Before  true atomic ensembles, it is useful to first mention an important precursor experiment: the generation of Einstein--Podolsky--Rosen (EPR) pairs of atoms by Hagley \textit{et al.} \cite{Hagley1997}. Although this experiment used two individual Rydberg atoms rather than a many-atom ensemble, it demonstrated a key idea for matter-based teleportation: massive particles can be entangled in a controlled way through their interaction with a quantized electromagnetic field. In the experiment, two rubidium atoms passed one after another through a high-\(Q\) microwave cavity. The first atom was initially prepared in an excited circular Rydberg state \(\ket{e}\), the second in a lower state \(\ket{g}\), and the cavity was initially in the vacuum state \(\ket{0}\). The initial state was therefore
+Before talking about teleporation using atomic ensembles, I think we quickly go over how we can prepare EPR via atoms first introduce by Hagley \textit{et al.} \cite{Hagley1997}.
+In the experiment, two rubidium atoms passed one after another through a high-\(Q\) microwave cavity. The first atom was initially prepared in an excited circular Rydberg state \(\ket{e}\)\\($\mathrm{D_e}$ in Fig. \ref{fig:Hagley}), 
+the second in a lower state \(\ket{g}\) ($\mathrm{D_g}$ in Fig. \ref{fig:Hagley}), and the cavity was initially in the vacuum state \(\ket{0}\).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/EPR via atom setup.png}
+    \caption{Diagram of the experiment by Hagley \textit{et al.} \cite{Hagley1997}.}
+    \label{fig:Hagley}
+\end{figure}
+
+The initial state was therefore,
 \begin{equation}
     \ket{\Psi_{\mathrm{in}}}
     =
@@ -621,11 +632,13 @@ The second atom then interacted with the cavity for a \(\pi\) pulse. If the phot
         \ket{g_1,e_2}
     \right).
 \end{equation}
-Thus, the cavity field acted as an intermediate quantum bus: it started and ended in the vacuum state, but during the process it mediated the entanglement between the two atoms. The atoms were separated by a distance on the order of a centimeter, showing that EPR-type entanglement could be produced between spatially separated massive particles \cite{Hagley1997}. This result is conceptually important for teleportation because quantum teleportation requires a shared entangled resource. Hagley's experiment showed that such an entangled resource can be engineered between material systems rather than only between photons.
 
-The connection to atomic ensemble teleportation becomes clearer when one replaces individual atoms by collective atomic excitations. In an ensemble, the quantum information is not stored in one specific atom, but in a coherent collective mode shared among many atoms. This collective enhancement increases the effective coupling between light and matter and allows the ensemble to behave like a single effective quantum memory. Depending on the encoding, atomic ensembles can be used either in a continuous-variable framework or in a discrete-variable spin-wave framework.
 
-In the continuous-variable approach, the collective spin of an ensemble is treated as an effective harmonic oscillator. A representative experiment was performed by Sherson \textit{et al.}, in which a quantum state of light was teleported onto a macroscopic atomic ensemble containing approximately \(10^{12}\) cesium atoms \cite{Sherson2006}. The atoms were optically pumped into a coherent spin state with a large mean spin along the \(x\)-direction. The two transverse spin components could then be normalized as canonical variables,
+Thus, the cavity field acted as an intermediate quantum bus, which started and ended in the vacuum state, but during the process it mediated the entanglement between the two atoms. The atoms were separated by a distance on the order of a centimeter, showing that EPR-type entanglement could be produced between spatially separated massive particles.
+The connection to atomic ensemble teleportation becomes clearer when one replaces individual atoms by collective atomic excitations. In an ensemble, the quantum information is not stored in one specific atom, but in a coherent collective mode shared among many atoms.
+This collective enhancement increases the effective coupling between light and matter and allows the ensemble to behave like a single effective quantum memory. Depending on the encoding, atomic ensembles can be used either in a continuous-variable framework or in a discrete-variable spin-wave framework. In this subsection we will only discuss the continuous-variable approach, because it is relavant to the previous subsection. 
+
+In the continuous-variable approach, the collective spin of an ensemble is treated as an effective harmonic oscillator. A representative experiment was performed by Sherson \textit{et al.}, in which a quantum state of light was teleported onto a macroscopic atomic ensemble containing approximately \(10^{12}\) cesium atoms \cite{Sherson2006}. The atoms were optically pumped into a coherent spin state with a large mean spin along the \(x\)-direction(see Fig.\ref{fig:Sherson}). The two transverse spin components could then be normalized as canonical variables,
 \begin{equation}
     \hat{X}_A =
     \frac{\hat{J}^{\mathrm{rot}}_y}{\sqrt{J_x}},
@@ -638,8 +651,15 @@ where \(J_x\) is the large mean collective spin. Under the condition that the tr
     [\hat{X}_A,\hat{P}_A]=i.
 \end{equation}
 This makes the atomic ensemble mathematically analogous to an optical mode with quadrature operators.
-
-The entanglement resource in the Sherson experiment was created by sending a strong off-resonant light pulse through the atomic ensemble. Through a Faraday-type interaction, the polarization quadratures of the outgoing light became entangled with the collective spin quadratures of the atoms. Physically, the atomic spin rotated the polarization of the light, while the light also acted back on the atoms through the ac Stark effect. After this interaction, the outgoing light pulse was sent to Alice and mixed on a \(50/50\) beamsplitter with the unknown optical state to be teleported. Alice then performed a Bell measurement using polarization homodyne detection. The resulting classical photocurrents were sent to Bob, who applied radio-frequency magnetic-field pulses to the atomic ensemble. These pulses displaced the collective spin variables according to Alice's measurement result.
+\newpage
+The entanglement resource in the Sherson experiment was created by sending a strong off-resonant light pulse through the atomic ensemble.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/atom and light set up.png}
+    \caption{Diagram of the experiment by Sherson \textit{et al.} \cite{Sherson2006}.}
+    \label{fig:Sherson}
+\end{figure}
+Through a Faraday-type interaction, the polarization quadratures of the outgoing light became entangled with the collective spin quadratures of the atoms. Physically, the atomic spin rotated the polarization of the light, while the light also acted back on the atoms through the ac Stark effect. After this interaction, the outgoing light pulse was sent to Alice and mixed on a \(50/50\) beamsplitter with the unknown optical state to be teleported. Alice then performed a Bell measurement using polarization homodyne detection. The resulting classical photocurrents were sent to Bob, who applied radio-frequency magnetic-field pulses to the atomic ensemble. These pulses displaced the collective spin variables according to Alice's measurement result.
 
 Ideally, the feed-forward operation maps the input optical quadratures onto the atomic ensemble,
 \begin{equation}
@@ -649,7 +669,7 @@ Ideally, the feed-forward operation maps the input optical quadratures onto the 
 \end{equation}
 where \(\hat{Y}\) and \(\hat{Q}\) are the quadratures of the input light field, and \(\hat{X}^{\mathrm{tele}}_A\), \(\hat{P}^{\mathrm{tele}}_A\) are the final teleported atomic variables. The original optical state is not transferred by a direct classical copying process. Instead, the pre-existing light--matter entanglement, the Bell measurement, the classical communication, and the conditional spin displacement together reproduce the input quantum state in the atomic ensemble.
 
-The performance of the teleportation is quantified by the fidelity between the input optical state and the reconstructed atomic state. Sherson \textit{et al.} reported deterministic teleportation of coherent states with fidelities
+The performance of the teleportation is quantified by the fidelity between the input optical state and the reconstructed atomic state. Sherson \textit{et al.}\cite{Sherson2006} reported deterministic teleportation of coherent states with fidelities
 \begin{equation}
     F = 0.60 \pm 0.02
     \qquad
@@ -665,51 +685,30 @@ and
     \qquad
     \bar{n}=20.
 \end{equation}
-These values exceeded the corresponding classical benchmarks, showing that the process could not be explained as a purely classical measure-and-prepare transfer \cite{Sherson2006}. The final atomic state was verified by sending a second strong pulse through the ensemble and reconstructing the atomic quadratures from the outgoing light.
+These values exceeded the corresponding classical benchmarks, showing that the process could not be explained as a purely classical measure-and-prepare transfer.
 
-A later development extended this idea from light-to-matter teleportation to matter-to-matter teleportation. Krauter \textit{et al.} demonstrated deterministic continuous-variable teleportation between two distant macroscopic atomic ensembles at room temperature \cite{Krauter2013}. In this case, light was used to distribute entanglement between two material systems, and a collective spin state encoded in one ensemble was teleported onto another ensemble. This result is conceptually close to the original goal of a quantum network: information begins in a stationary matter system, is transferred through a light-mediated entangled channel, and ends in another stationary matter system.
-
-Atomic ensembles can also be used in a discrete-variable framework. Here the relevant excitation is a single collective spin wave. Suppose all atoms are initially in the ground state \(\ket{g}\). A weak write pulse can create a Stokes photon together with one collective excitation in another long-lived atomic state \(\ket{s}\). The spin-wave state can be written as
-\begin{equation}
-    \ket{1}_{\mathrm{sw}}
-    =
-    \frac{1}{\sqrt{N}}
-    \sum_{j=1}^{N}
-    e^{i\mathbf{k}_{\mathrm{sw}}\cdot \mathbf{r}_j}
-    \ket{g_1 g_2 \cdots s_j \cdots g_N},
-\end{equation}
-where \(N\) is the number of atoms, \(\mathbf{r}_j\) is the position of the \(j\)-th atom, and
-\begin{equation}
-    \mathbf{k}_{\mathrm{sw}}
-    =
-    \mathbf{k}_{\mathrm{write}}
-    -
-    \mathbf{k}_{\mathrm{Stokes}}
-\end{equation}
-is the spin-wave wave vector. The phase factor determines the spatial mode of the collective excitation. During readout, a read pulse converts the spin wave back into an anti-Stokes photon with the phase-matching condition
-\begin{equation}
-    \mathbf{k}_{\mathrm{anti-Stokes}}
-    =
-    \mathbf{k}_{\mathrm{read}}
-    +
-    \mathbf{k}_{\mathrm{sw}} .
-\end{equation}
-Therefore, the geometry of the write and read beams determines both the stored memory mode and the direction of the retrieved photon. Atomic motion can destroy the phase coherence of the spin wave, so cold atoms, long-wavelength spin waves, and carefully chosen beam geometries are important for extending the memory lifetime.
-
-This discrete-variable picture is closely related to the DLCZ quantum repeater protocol proposed by Duan, Lukin, Cirac, and Zoller \cite{Duan2001}. In that protocol, entanglement between remote atomic ensembles is generated probabilistically. A weak write pulse creates a photon--spin-wave pair with small probability. Detection of the emitted photon heralds the presence of a collective spin excitation. By interfering photons from two remote ensembles on a beamsplitter, one can herald entanglement between the distant memories. Once such an entangled memory pair is available, teleportation can be performed by a Bell-state measurement involving the input qubit and one part of the entangled resource.
-
-This idea was realized in memory-built-in teleportation experiments. Chen \textit{et al.} demonstrated teleportation of an unknown photonic polarization qubit onto a remote atomic ensemble, where the teleported state was stored as a collective atomic excitation and later read out \cite{Chen2008}. Bao \textit{et al.} later demonstrated quantum teleportation between two remote atomic-ensemble quantum memories connected by optical fiber \cite{Bao2012}. In that experiment, each node contained approximately \(10^8\) rubidium atoms. The spin-wave state of one ensemble was converted into a propagating photon and subjected to a Bell-state measurement with another photon entangled with the second ensemble. Successful two-photon detection heralded the teleportation event, with an average fidelity reported as \(88(7)\%\).
-
-The continuous-variable and discrete-variable approaches have complementary advantages. Continuous-variable teleportation can be deterministic and naturally uses homodyne detection, making it well suited for Gaussian optical states and collective spin variables. However, high fidelity requires strong light--matter coupling, low optical loss, accurate feed-forward, and long atomic coherence time. Discrete-variable teleportation is naturally compatible with single-photon qubits and heralded quantum repeaters, but it is probabilistic because success depends on photon detection events. In both approaches, the main experimental limitations are optical loss, detector inefficiency, atomic decoherence, imperfect mode matching, and imperfect state preparation.
-
-Overall, atomic ensemble systems show how quantum teleportation can become a practical interface between communication and storage. The earlier Rydberg-atom EPR experiment demonstrated that entanglement between massive particles can be engineered through controlled atom--field interaction. Later ensemble experiments extended this idea to macroscopic matter systems, where collective spin states can store, receive, and transmit quantum information. Atomic ensembles are therefore not merely passive memories; they are active quantum network nodes capable of entanglement generation, teleportation, storage, and retrieval.
+Overall, atomic ensemble systems show how quantum teleportation can become a practical interface between communication and storage. The earlier Rydberg-atom EPR experiment demonstrated that entanglement between massive particles can be engineered through controlled atom--field interaction. Later ensemble experiments extended this idea to macroscopic matter systems, where collective spin states can store, receive, and transmit quantum information.
 
 
 \subsection{Solid-State System}
 
-The optical-mode and atomic-ensemble systems discussed above demonstrate that quantum teleportation can be implemented in very different physical platforms. A third important direction is the solid-state system, where the quantum information is stored and processed in artificial quantum devices fabricated on a chip. In particular, superconducting circuits provide a promising solid-state platform because qubits, resonators, gates, measurements, and real-time control electronics can be integrated into a single circuit architecture. Instead of using freely propagating photons or naturally occurring atoms, this approach uses engineered macroscopic quantum systems whose quantum states behave like controllable two-level systems.
+Optical-mode and atomic-ensemble systems fascinating as quantum teleporatation platforms, however,
+they might be difficult to integrate into a large-scale quantum network or quantum computer.
+Now we're going to discuss solid-state systems, where the quantum information is stored and processed in artificial quantum devices fabricated on a chip particuly superconduting circuits.
+Instead of using freely propagating photons or naturally occurring atoms, this approach uses engineered macroscopic quantum systems whose quantum states behave like controllable two-level systems.
 
-A representative experiment was demonstrated by Steffen \textit{et al.}, who realized deterministic quantum teleportation with feed-forward in a superconducting circuit. The system consists of three superconducting transmon qubits, denoted as $Q_1$, $Q_2$, and $Q_3$, coupled to three superconducting coplanar waveguide resonators. In the teleportation protocol, $Q_1$ is the qubit carrying the unknown input state
+A representative experiment was demonstrated by Steffen \textit{et al.}\cite{Steffen2013}, who realized deterministic quantum teleportation with feed-forward in a superconducting circuit.
+The system consists of three superconducting transmon qubits, denoted as $Q_1$, $Q_2$, and $Q_3$, 
+coupled to three superconducting coplanar waveguide resonators(see Fig.\ref{fig:Steffen}). 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/solid state system setup.png}
+    \caption{Diagram of the experiment by Steffen \textit{et al.} \cite{Steffen2013}, figure a is the connection diagram and the figure b-f is detail layout of the ICs.}
+    \label{fig:Steffen}
+\end{figure}
+\newpage
+In the teleportation protocol, $Q_1$ is the qubit carrying the unknown input state
 \begin{equation}
     |\psi_{\mathrm{in}}\rangle = \alpha |0\rangle + \beta |1\rangle ,
 \end{equation}
