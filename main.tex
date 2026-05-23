@@ -734,7 +734,7 @@ measurement result to complete the teleportation on the receiver qubit.
 A key achievement of this solid-state implementation is that it does not merely post-select one successful outcome. In many optical teleportation experiments, only part of the Bell basis can be distinguished, so the protocol succeeds only probabilistically. In this superconducting circuit experiment, Josephson parametric amplifiers were used to perform high-fidelity single-shot measurements. 
 Moreover, the experiment implemented deterministic teleportation with active feed-forward, using all four possible Bell-measurement outcomes.
 
-The reported results show that the teleported state fidelities are above the classical limit. For post-selected teleportation, the average output-state fidelity was about $81.7\%$, with an average process fidelity of about $72.0\%$. When all four Bell-state outcomes were distinguished deterministically, the average output-state fidelity was about $77.1\%$, with a process fidelity of about $65.5\%$. When real-time feed-forward was included, the directly measured deterministic state-transfer fidelity was about $68.8\%$, still above the classical threshold of $2/3$ for state teleportation. The lower fidelity in the full feed-forward case mainly came from imperfect qubit coherence, gate errors, readout errors, and the finite delay required for real-time measurement processing and conditional control.
+The reported results show that the teleported state fidelities are above the classical limit. For post-selected teleportation, the average output-state fidelity was about $0.817$, with an average process fidelity of about $0.720$. When all four Bell-state outcomes were distinguished deterministically, the average output-state fidelity was about $0.771$, with a process fidelity of about $0.655$. When real-time feed-forward was included, the directly measured deterministic state-transfer fidelity was about $0.688$, still above the classical threshold of $2/3$ for state teleportation. The lower fidelity in the full feed-forward case mainly came from imperfect qubit coherence, gate errors, readout errors, and the finite delay required for real-time measurement processing and conditional control.
 
 Overall, the solid-state implementation of quantum teleportation provides alternative rather than photons or atoms with superconducting artificial atoms embedded in a integrated microwave circuit.
 And with the integrated circuit platform, we can achieve deterministic teleportation with fast feed-forward(around 500$\mathrm{ns}$), which optical or atomic systems are hard to compare.
@@ -800,11 +800,7 @@ input states chosen from mutually unbiased bases on the Bloch sphere:
 \[
     \ket{H},\quad \ket{V},\quad \ket{+},\quad \ket{-},\quad \ket{R},\quad \ket{L}.
 \]
-The measured average teleportation fidelity was
-\[
-    F = 0.80 \pm 0.01,
-\]
-which is clearly above the classical limit of \(2/3\).
+The measured average teleportation fidelity was $F = 0.80 \pm 0.01$, which is clearly above the classical limit of \(2/3\).
 
 From an experimental point of view, the propagation direction, or wave vector
 \(\mathbf{k}\), is also crucial. The qubit itself is encoded in polarization, which is
@@ -868,33 +864,30 @@ Thus, the gate is not produced by a direct physical interaction between the two 
 \end{figure}
 The important point is that the gate teleportation protocol is deterministic after entanglement has been heralded. Photon loss only affects whether the Bell pair is successfully created; it does not destroy the unknown computational state stored in the circuit qubits. This is a major advantage over direct photon-mediated transfer of quantum information, where loss of the photon can correspond to loss of the quantum state itself. In QGT, the quantum channel is only responsible for preparing entanglement, so failed attempts can simply be repeated until success. This makes the method more suitable for scalable architectures.
 
-For the result, they obtained an average gate fidelity of \(86.2(9)\%\) on QGT of a controlled-Z gate between two trapped-ion modules.
-Moreover, the authors also showed that the same QGT process can be repeated several times to build more complicated two-qubit gates. For example, they implemented distributed iSWAP and SWAP gates. The iSWAP gate used two teleported CZ gates and reached a fidelity of \(70(2)\%\), while the SWAP gate used three teleported CZ gates and reached a fidelity of \(64(2)\%\).
+For the result, they obtained an average gate fidelity of $0.862(9)$ on QGT of a controlled-Z gate between two trapped-ion modules.
+Moreover, the authors also showed that the same QGT process can be repeated several times to build more complicated two-qubit gates. For example, they implemented distributed iSWAP and SWAP gates. The iSWAP gate used two teleported CZ gates and reached a fidelity of $0.70(2)$, while the SWAP gate used three teleported CZ gates and reached a fidelity of $0.64(2)$.
 
 Beyond individual gates, the experiment also ran a small distributed quantum algorithm: a two-qubit version of Grover's search algorithm. In this algorithm, one teleported CZ gate was used for the oracle, and another was used for the diffusion operation. For the four possible marked states,
 \[
 a \in \{00,01,10,11\},
 \]
-the system found the correct answer with an average success probability of \(71(1)\%\).
-
+the system found the correct answer with an average success probability of $0.71(1)$.
 \section{Conclusion}
 
-In this report, we reviewed how quantum teleportation has developed from the original Bennett protocol\cite{Bennett} into several experimental platforms for quantum communication and quantum computation. 
-Although the physical systems are different, the central idea is the same: an unknown quantum state is transferred using shared entanglement, a Bell-type measurement, classical communication, and a conditional correction. 
-The main difference between platforms is their practical purpose. Optical photons are well suited for long-distance communication, continuous-variable optical modes allow unconditional teleportation of coherent states, atomic ensembles provide a possible quantum memory, solid-state circuits allow fast feed-forward control, and gate teleportation can connect separated quantum processors.
-
-
-
-
-
+In this report, we reviewed the development of quantum teleportation from its original theoretical idea\cite{Bennett} to several experimental realizations.
+Quantum teleportation does not physically move a particle from one place to another. Yet, it reconstructs an unknown quantum state in a different system by using shared entanglement, a Bell-type measurement, classical communication, and a conditional correction. 
+The examples discussed in this report show that this same basic protocol can be applied to many platforms, including optical qubits, continuous-variable optical modes, atomic ensembles, superconducting circuits, satellite-based communication, and quantum gate teleportation.
+Each platform has a different advantage: photons are useful for long-distance communication, atomic ensembles are promising for quantum memories, solid-state systems allow fast feed-forward control, and gate teleportation provides a way to connect separated quantum processors. 
+Although current experiments still face challenges such as loss, imperfect fidelity, limited efficiency, and scalability, they show that teleportation is no longer only a conceptual test of quantum mechanics. It has become an important tool for future quantum communication networks, quantum memories, and distributed quantum computation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\renewcommand{\bibsection}{\section*{References}}
+
 \bibliographystyle{apsrev}
-\bibliography{reference, title = {References}}
+\bibliography{reference}
 
 \end{document}
-
 
 
