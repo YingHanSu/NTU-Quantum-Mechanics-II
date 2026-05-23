@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1778575081.9094 "main.aux" "main.bbl" "main" 1778575083.61532 0
-  "./reference.bib" 1778571957 3904 6f790042398da5923047d51a5fe46d0a ""
+["bibtex main"] 1779535925.74396 "main.aux" "main.bbl" "main" 1779535984.60462 0
+  "./reference.bib" 1779534944 4345 b0e43eac738a0f738b99e3406438761c ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
-  "main.aux" 1778575083 7346 d82b9446f52f7ce74e5de340fb4163e2 "pdflatex"
+  "main.aux" 1779535984 8025 47e7ee50d4ae2b19d382fbe05fa2884d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778575082.11226 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1778575083.61568 0
-  "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776776491 81162 40a638658ef6d05880d7c04284bf5193 ""
+["pdflatex"] 1779535983.05126 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779535984.60504 0
+  "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778680528 81162 40a638658ef6d05880d7c04284bf5193 ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1778468758 38336 784b5a8c466227b7d62b9d5bedcf4b2e ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1776061298 28976 e5651454bf55e7e43b9c9bfe9d36aeff ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1776061297 31952 d250cd2c00f49335b93daf62adcdb8e7 ""
@@ -285,14 +285,15 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/ytableau/ytableau.sty" 1623755617 9205 02f9b2cccde94c720189905bc832b940 ""
-  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1778575079 65371 77b323fdd23f9c3f94e51680908fdc12 ""
+  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779535982 65646 decc7019c9a376bbfe574b9ad2798817 ""
+  "figures/Unconditional teleportation_setup.png" 1779535013 49130 3f5ff243e48b165637f322c863c19033 ""
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
-  "main.aux" 1778575083 7346 d82b9446f52f7ce74e5de340fb4163e2 "pdflatex"
-  "main.bbl" 1778575082 5180 51af2c10c9c8bcfdb8a9ea01d4de7bf9 "bibtex main"
-  "main.out" 1778575083 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
-  "main.tex" 1778575079 65371 77b323fdd23f9c3f94e51680908fdc12 ""
-  "main.toc" 1778575083 2836 a765ceaf55b5c2334038cc779224f389 "pdflatex"
+  "main.aux" 1779535984 8025 47e7ee50d4ae2b19d382fbe05fa2884d "pdflatex"
+  "main.bbl" 1779535925 5595 fcd9e0407ec0041782b1ec06c46b0a99 "bibtex main"
+  "main.out" 1779535984 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
+  "main.tex" 1779535982 65646 decc7019c9a376bbfe574b9ad2798817 ""
+  "main.toc" 1779535984 2836 a765ceaf55b5c2334038cc779224f389 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

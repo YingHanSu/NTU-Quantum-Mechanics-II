@@ -443,46 +443,49 @@ To rigorously validate quantum teleportation, the experimental fidelity ($S$)—
 In the previous chapter, we explored the standard quantum teleportation protocol, which is based on discrete-variable (DV) systems and uses photonic qubits as the information carriers. Now, it is reasonable to ask the following question: can we construct a teleportation protocol in an infinite-dimensional Hilbert space instead of only a two-dimensional one?
 
 The answer is yes. Instead of encoding quantum information in a two-level system such as
-eq.\ref{Eq: qubit}. Continuous-variable (CV) teleportation uses quantum states of optical modes. A single optical mode is mathematically equivalent to a quantum harmonic oscillator, whose Hilbert space is spanned by the infinite set of Fock states
-\begin{equation}
-    \ket{0}, \ket{1}, \ket{2}, \cdots .
-\end{equation}
-Therefore, the state to be teleported is no longer restricted to a qubit. It can be an arbitrary state of one mode of the electromagnetic field, described by continuous quadrature variables.
+Eq.\ref{Eq: qubit}. Continuous-variable (CV) teleportation uses quantum states of optical modes. A single optical mode is mathematically equivalent to a quantum harmonic oscillator, whose Hilbert space is spanned by the infinite set of Fock states: $\ket{0}, \ket{1}, \ket{2}, \cdots $. Therefore, the state to be teleported is no longer restricted to a qubit. It can be an arbitrary state of one mode of the electromagnetic field, described by continuous quadrature variables. 
+Now I'll give example for CV telelporation using optical modes.
 
 For an optical mode with annihilation  operator $\hat{a}$, we define the field quadratures
 \begin{equation}
     \hat{x} = \frac{1}{\sqrt{2}}(\hat{a}+\hat{a}^{\dagger}),
     \qquad
-    \hat{p} = \frac{1}{i\sqrt{2}}(\hat{a}-\hat{a}^{\dagger}),
+    \hat{p} = \frac{1}{i\sqrt{2}}(\hat{a}-\hat{a}^{\dagger});
+    \quad 
+    [\hat{x},\hat{p}] = i
 \end{equation}
-which are analogous to the position and momentum operators of a harmonic oscillator. These two variables satisfy the canonical commutation relation
-\begin{equation}
-    [\hat{x},\hat{p}] = i.
-\end{equation}
+which are analogous to the position and momentum operators of a harmonic oscillator. 
 A quantum state of the optical mode can then be represented in phase space by a Wigner function
 \begin{equation}
-    W_{\text{in}}(x,p),
-\end{equation}
-or equivalently by using the complex amplitude
-\begin{equation}
-    \alpha = x+ip.
+    W_{\text{in}}(\alpha
+    ) ~;~ \alpha = x+ip.
+    \label{Eq:Wigner_function_input}
 \end{equation}
 
-The key resource in continuous-variable teleportation is not a Bell pair of qubits, but a two-mode squeezed state. This state plays the role of an EPR pair. In the ideal EPR limit, the two modes have perfect correlations between their quadratures. In the convention used by Braunstein and Kimble, the ideal correlations are roughly
+
+The key resource in continuous-variable teleportation is not a Bell pair of qubits, but a two-mode squeezed state. This state plays the role of an EPR pair. In the ideal EPR limit, the two modes have perfect correlations between their quadratures. 
+In the convention used by Braunstein and Kimble\cite{PhysRevLett.80.869}, the ideal correlations are roughly
+
 \begin{equation}
     x_1 + x_2 \rightarrow 0,
     \qquad
     p_1 - p_2 \rightarrow 0.
+    \label{Eq:Correlation}
 \end{equation}
-This means that if Alice measures one part of the entangled pair, Bob's mode is strongly correlated with it. However, perfect EPR correlation would require infinite squeezing and therefore infinite energy. In any real experiment, the squeezing is finite, so the teleportation can only be approximate.
+This means that if Alice measures one part of the entangled pair, Bob's mode is strongly correlated with it. However, perfect EPR correlation would require infinite squeezing and therefore infinite energy. In reality that is impossible so the teleporatation is always approximated. 
 
-The teleportation protocol proceeds as follows. Alice is given an unknown input state
-\begin{equation}
-    W_{\text{in}}(\alpha_{\text{in}}),
-\end{equation}
-which she wants to teleport to Bob. Alice and Bob also share a two-mode squeezed EPR state. Alice holds mode 1 and Bob holds mode 2.
+The teleportation protocol proceeds as follows. Initially, Alice is given an unknown input state as Eq.\ref{Eq:Wigner_function_input},
+which she wants to teleport to Bob. Alice and Bob also share a two-mode squeezed EPR state, such that Alice holds mode 1 and Bob holds mode 2.
 
-First, Alice combines the unknown input mode with her half of the EPR pair on a 50/50 beam splitter. The beam splitter produces two output modes,
+
+First, Alice combines the unknown input mode with her half of the EPR pair on a 50/50 beam splitter Fig.\ref{fig:CV_teleportation_diagram}. The beam splitter produces two output modes,
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/Unconditional teleportation_setup.png}3
+    \caption{Diagram of the continuous-variable teleportation experiment by Braunstein and Kimble \cite{PhysRevLett.80.869}.}
+    \label{fig:CV_teleportation_diagram}
+\end{figure}
 \begin{equation}
     \hat{a}_{a} = \frac{1}{\sqrt{2}}(\hat{a}_{1}+\hat{a}_{\text{in}}),
     \qquad
@@ -504,7 +507,7 @@ After receiving Alice's measurement results, Bob applies a phase-space displacem
     =
     \alpha_2 + \sqrt{2}(x_a - i p_b).
 \end{equation}
-Using the EPR correlations $x_1+x_2\approx 0$ and $p_1-p_2\approx 0$, we can see why this reconstructs the input state. For the $x$ quadrature,
+Using the EPR correlations in Eq.\ref{Eq:EPR_correlations}, we can see why this reconstructs the input state. For the $x$ quadrature,
 \begin{equation}
     x_{\text{out}}
     =
