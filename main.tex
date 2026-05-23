@@ -390,19 +390,19 @@ Crucially, photon 1 is routed toward Alice's station, while photon 2 traverses b
     \label{fig:experimental_setup}
 \end{figure}
 
-\subsubsection{\textbf{The Preparer: Encoding the Unknown State}}
+\subsubsection{The Preparer: Encoding the Unknown State}
 A strict logical distinction is maintained between the Preparer and Alice. To ensure the state $|\phi\rangle$ remains fundamentally "unknown," the Preparer encodes it onto photon 1's polarization before it reaches Alice's apparatus. This relies on local unitary operations on paths $a_1$ and $b_1$:
 
 \begin{itemize}
-    \item \textbf{Polarization Initialization:} Photon 1 enters with an initial defined polarization (typically vertical, $|v\rangle_1$).
-    \item \textbf{Unitary Manipulation:} Quarter-wave plates and Fresnel rhomb rotators (R) transform this into a general pure state: $|\phi\rangle=\alpha|v\rangle_1+\beta|h\rangle_1$.
-    \item \textbf{Path Independence:} Operating identically on paths $a_1$ and $b_1$, the polarization state effectively factors out of the path entanglement. 
+    \item Polarization Initialization: Photon 1 enters with an initial defined polarization (typically vertical, $|v\rangle_1$).
+    \item Unitary Manipulation: Quarter-wave plates and Fresnel rhomb rotators (R) transform this into a general pure state: $|\phi\rangle=\alpha|v\rangle_1+\beta|h\rangle_1$.
+    \item Path Independence: Operating identically on paths $a_1$ and $b_1$, the polarization state effectively factors out of the path entanglement. 
 \end{itemize}
 
 This yields a global tripartite system where the unknown polarization is carried by the path-entangled photon 1:
 $$|\Psi_{total}\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)(\alpha|v\rangle_1+\beta|h\rangle_1)|h\rangle_2$$
 
-\subsubsection{\textbf{Alice's BSM Engine: Interferometric Bell State Measurement}}
+\subsubsection{Alice's BSM Engine: Interferometric Bell State Measurement}
 Alice’s Bell State Measurement (BSM) interferometer projects photon 1's bipartite state onto four orthogonal path-polarization Bell states:
 $$|c^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|v\rangle_1\pm|b_1\rangle|h\rangle_1)$$
 $$|d^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|h\rangle_1\pm|b_1\rangle|v\rangle_1)$$
@@ -879,10 +879,20 @@ the system found the correct answer with an average success probability of \(71(
 
 \section{Conclusion}
 
+In this report, we reviewed how quantum teleportation has developed from the original Bennett protocol\cite{Bennett} into several experimental platforms for quantum communication and quantum computation. 
+Although the physical systems are different, the central idea is the same: an unknown quantum state is transferred using shared entanglement, a Bell-type measurement, classical communication, and a conditional correction. 
+The main difference between platforms is their practical purpose. Optical photons are well suited for long-distance communication, continuous-variable optical modes allow unconditional teleportation of coherent states, atomic ensembles provide a possible quantum memory, solid-state circuits allow fast feed-forward control, and gate teleportation can connect separated quantum processors.
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \bibliographystyle{apsrev}
-\bibliography{reference}
+\bibliography{reference, title = {References}}
 
 \end{document}
 

@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1779562043.16463 "main.aux" "main.bbl" "main" 1779562045.20217 0
-  "./reference.bib" 1779559735 6298 3309b4363b479590f8fa51f3cd897f6c ""
+["bibtex main"] 1779562934.1769 "main.aux" "main.bbl" "main" 1779563149.45155 0
+  "./reference.bib" 1779562448 6943 146053c30a0d844a677fa3bc706ad1de ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/bibtex/bst/revtex4/apsrev.bst" 1602107563 43844 78e58abfb2d07832103f1e2f30cf6375 ""
-  "main.aux" 1779562044 11710 bd175ad39e6fe1d11d0b1f274dcf4776 "pdflatex"
+  "main.aux" 1779562935 11688 e844de38e2df8ad19d6a9d4a8ea85075 "pdflatex"
+  "title=References.bib" 0 -1 0 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1779562043.36989 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779562045.20256 0
+["pdflatex"] 1779563147.29763 "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" "main.pdf" "main" 1779563149.45206 0
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778680528 81162 40a638658ef6d05880d7c04284bf5193 ""
-  "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1778468758 38336 784b5a8c466227b7d62b9d5bedcf4b2e ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1776061298 28976 e5651454bf55e7e43b9c9bfe9d36aeff ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1776061297 31952 d250cd2c00f49335b93daf62adcdb8e7 ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1776061305 40136 d9bcb7035f8c12a91652884481d8d8ca ""
@@ -27,7 +27,6 @@
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1776061294 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1776061294 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "C:/Users/Henry Su/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1743434619 24226498 19ee8a39467e2240aa9cecb94e181d67 ""
-  "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbi1095.tfm" 993061908 2900 21d5bbfc5b6ea2bdb2c1d1efa4e47b72 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1095.tfm" 993061956 3228 aacd2ac2d814480e4422ad7e830fd2d4 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1200.tfm" 993061958 3200 b8d69bc738e5ef3e08cefeef3109ff56 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1440.tfm" 993061960 3196 0b37fa3083e15c57cfa8c4ff52f2807a ""
@@ -284,7 +283,7 @@
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Henry Su/AppData/Local/Programs/MiKTeX/tex/latex/ytableau/ytableau.sty" 1623755617 9205 02f9b2cccde94c720189905bc832b940 ""
-  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779562040 60297 36709b59a2448e9efd8a17aa6595b214 ""
+  "c:/Users/Henry Su/Desktop/NTU-Quantum-Mechanics-II/main.tex" 1779563144 61109 f2bd08a20a8b8ad779be6851c955921b ""
   "figures/EPR via atom setup.png" 1779542048 32478 dca18bd26df694c435833cad66a0fc7f ""
   "figures/Groud to satellite.png" 1779558244 927139 1e8c5aed58a7a0c69592caeaab009b32 ""
   "figures/QGT CZgate.png" 1779561058 112548 fecad31e4369ba50ef725aab6af99dae ""
@@ -295,11 +294,11 @@
   "figures/bloch sphere.png" 1777904862 50438 582351b0436496b92430f720e84929e4 ""
   "figures/setup_diagram.jpg" 1778468715 144051 dd3597e8be35272cd062ce85c4046c81 ""
   "figures/solid state system setup.png" 1779553177 129839 c78b1138370519bfe51431be5ee1c47b ""
-  "main.aux" 1779562044 11710 bd175ad39e6fe1d11d0b1f274dcf4776 "pdflatex"
-  "main.bbl" 1779562043 7085 3e81b0d6d6601d7407b5e7f0886d68cd "bibtex main"
-  "main.out" 1779562044 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
-  "main.tex" 1779562040 60297 36709b59a2448e9efd8a17aa6595b214 ""
-  "main.toc" 1779562044 2836 52c039eef388e9c2f1d60c24cdd5ff0f "pdflatex"
+  "main.aux" 1779563148 11724 8896729856e2e7638e85aa33e2e32fe1 "pdflatex"
+  "main.bbl" 1779562934 7085 3e81b0d6d6601d7407b5e7f0886d68cd "bibtex main"
+  "main.out" 1779563148 6838 fbbfe371717e5754c2176ec0f97427b2 "pdflatex"
+  "main.tex" 1779563144 61109 f2bd08a20a8b8ad779be6851c955921b ""
+  "main.toc" 1779563148 2816 2d8b3476b5c30b6e79bea6d10252a92b "pdflatex"
   (generated)
   "main.aux"
   "main.log"
