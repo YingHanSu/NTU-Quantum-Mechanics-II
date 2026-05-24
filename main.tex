@@ -379,24 +379,23 @@ This separation between classical communication and quantum information is one r
 \newpage
 \section{Experimental Implementation via Dual-Photon Entanglement}
 
-\subsection{The Quantum Leap from Theory to Lab}
-The 1998 experiment by Boschi \textit{et al}. marked a paradigm shift in realizing quantum information protocols. While the canonical Bennett \textit{et al}. (1993) model required three independent photons—posing formidable temporal synchronization hurdles—this design utilized a sophisticated two-photon, dual-degree-of-freedom architecture. By exploiting both the momentum (path or k-vector) and polarization of a single entangled photon pair, researchers accessed a four-dimensional Hilbert space ($2 \text{ paths} \times 2 \text{ polarizations}$) within a bipartite system. This architectural innovation addressed two primary limitations of prior configurations:
+\subsection{Experimental Background}
+The 1998 experiment by Boschi \textit{et al.} provided an alternative approach for realizing quantum information protocols. While the original Bennett \textit{et al.} (1993) model required three independent photons---which introduced technical challenges regarding temporal synchronization---this setup utilized a two-photon, dual-degree-of-freedom architecture. By utilizing both the momentum (path or k-vector) and polarization of a single entangled photon pair, researchers accessed a four-dimensional Hilbert space ($2 \text{ paths} \times 2 \text{ polarizations}$) within a bipartite system. This configuration addressed two primary limitations of prior multi-photon experiments:
 
 \begin{itemize}
-    \item \textbf{100\% Success Rate in Bell State Measurement:} Unlike linear-optics three-photon schemes (bounded by a 50\% success rate), this approach permits projection onto the complete Bell basis, enabling the deterministic identification of all four states simultaneously.
-    \item \textbf{Elimination of Three-Photon Coincidence Hurdles:} Deriving the entire process from a single entangled photon pair (EPR source) circumvents the prohibitive difficulty of synchronizing independent sources within sub-nanosecond coincidence windows.
+    \item \textbf{Complete Bell State Measurement:} Unlike linear-optics three-photon schemes (which are bounded by a $50\%$ success rate), this approach permits projection onto the complete Bell basis, enabling the identification of all four states simultaneously.
+    \item \textbf{Reduction of Coincidence Requirements:} Deriving the process from a single entangled photon pair (EPR source) avoids the difficulty of synchronizing independent sources within sub-nanosecond coincidence windows.
 \end{itemize}
 
-The physical execution initiates at the EPR source, where the non-local quantum channel is established.
+The experimental execution begins at the EPR source, where the quantum channel is established.
 
 \subsection{Implementation of the Dual-Degree-of-Freedom Setup}
 
-\subsubsection{\textbf{The EPR Source: Converting Light into Entanglement}}
-Entanglement is generated via Type-II spontaneous parametric down-conversion (SPDC). Specifically, a 200 mW, 351.1 nm ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this initial polarization entanglement is deterministically converted into spatial path entanglement via birefringent calcite crystals (C), which split the incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
+\subsubsection{\textbf{Generation of the EPR Entangled Source}}
+Entanglement is generated via Type-II spontaneous parametric down-conversion (SPDC). Specifically, a 200 mW, 351.1 nm ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this initial polarization entanglement is converted into spatial path entanglement via birefringent calcite crystals (C), which split the incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
 $$|\Psi\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)$$
 
-Crucially, photon 1 is routed toward Alice's station, while photon 2 traverses backreflected paths $a_2$ and $b_2$ through the BBO crystal toward Bob.
-
+Photon 1 is routed toward Alice's station, while photon 2 traverses backreflected paths $a_2$ and $b_2$ through the BBO crystal toward Bob.
 
 \begin{figure}[h]
     \centering
@@ -405,8 +404,8 @@ Crucially, photon 1 is routed toward Alice's station, while photon 2 traverses b
     \label{fig:experimental_setup}
 \end{figure}
 
-\subsubsection{\textbf{The Preparer: Encoding the Unknown State}}
-A strict logical distinction is maintained between the Preparer and Alice. To ensure the state $|\phi\rangle$ remains fundamentally "unknown," the Preparer encodes it onto photon 1's polarization before it reaches Alice's apparatus. This relies on local unitary operations on paths $a_1$ and $b_1$:
+\subsubsection{\textbf{Preparation and Encoding of the Unknown State}}
+A logical distinction is maintained between the Preparer and Alice. To ensure the state $|\phi\rangle$ remains unknown to Alice, the Preparer encodes it onto photon 1's polarization before it reaches Alice's apparatus. This relies on local unitary operations on paths $a_1$ and $b_1$:
 
 \begin{itemize}
     \item \textbf{Polarization Initialization:} Photon 1 enters with an initial defined polarization (typically vertical, $|v\rangle_1$).
@@ -417,23 +416,23 @@ A strict logical distinction is maintained between the Preparer and Alice. To en
 This yields a global tripartite system where the unknown polarization is carried by the path-entangled photon 1:
 $$|\Psi_{total}\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)(\alpha|v\rangle_1+\beta|h\rangle_1)|h\rangle_2$$
 
-\subsubsection{\textbf{Alice's BSM Engine: Interferometric Bell State Measurement}}
+\subsubsection{\textbf{Interferometric Bell State Measurement}}
 Alice’s Bell State Measurement (BSM) interferometer projects photon 1's bipartite state onto four orthogonal path-polarization Bell states:
 $$|c^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|v\rangle_1\pm|b_1\rangle|h\rangle_1)$$
 $$|d^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|h\rangle_1\pm|b_1\rangle|v\rangle_1)$$
 
 Prior to entering a 50:50 beam splitter (BS), a Fresnel rhomb in path $b_1$ induces a $90^\circ$ polarization rotation. This ensures path and polarization degrees of freedom are properly aligned for interference. The BS then acts as a unitary operator, mapping distinct path-polarization correlations to specific output ports. 
 
-The BS is mounted on a micrometrical stage to precisely tune the path-length difference ($\Delta z$). Alignment is confirmed by "interference dips" in coincidence count rates, signifying spatiotemporal wave packet overlap.
+The BS is mounted on a micrometrical stage to precisely tune the path-length difference ($\Delta z$). Alignment is confirmed by interference dips in coincidence count rates, signifying spatiotemporal wave packet overlap.
 
-\textbf{Mechanics of Detection:} Polarizing beam splitters (PBS) sort the emerging photons into four avalanche photodiode detectors ($D_{A+}, D_{A+}^\perp, D_{A-}, D_{A-}^\perp$). Detector coincidences unambiguously project onto the Bell basis:
+\textbf{Mechanics of Detection:} Polarizing beam splitters (PBS) sort the emerging photons into four avalanche photodiode detectors ($D_{A+}, D_{A+}^\perp, D_{A-}, D_{A-}^\perp$). Detector coincidences project onto the Bell basis:
 \begin{itemize}
     \item A detection at $D_{A+}^\perp$ or $D_{A-}^\perp$ identifies states $|c^\pm\rangle$.
     \item A detection at $D_{A+}$ or $D_{A-}$ identifies states $|d^\pm\rangle$.
 \end{itemize}
-This projective measurement dictates the unitary operation Bob must perform to reconstruct the initial state.
+This measurement determines the unitary operation Bob must perform to reconstruct the initial state.
 
-\subsubsection{\textbf{Bob’s Station: Reconstructing the Teleported State}}
+\subsubsection{\textbf{Passive Reconstruction and State Verification}}
 At the receiving station, photon 2 arrives via trajectories $a_2$ and $b_2$. To resolve the path entanglement, polarization in path $a_2$ is orthogonally rotated by $90^\circ$ via a half-wave plate before recombining with path $b_2$ at the polarizing beam splitter ($PBS_B$).
 
 Bob employs \textit{passive reconstruction}. Rather than dynamically rotating the state using active electro-optic switches, he reorients his measurement basis to verify the teleported state based on Alice's classical transmission.
@@ -445,8 +444,10 @@ Bob employs \textit{passive reconstruction}. Rather than dynamically rotating th
     \item \textbf{Phase Matching:} Bob uses a micrometrical stage to tune $\Delta y$, ensuring paths satisfy the phase-matching criteria for high-fidelity verification.
 \end{itemize}
 
-\subsection{The Verdict: Beating the Classical Limit}
-To rigorously validate quantum teleportation, the experimental fidelity ($S$)—representing the average probability of the teleported state passing verification—must strictly exceed the classical communication limit of $0.75$. Surpassing this threshold empirically proves that entanglement was utilized as a non-local resource.In the 1998 experiment, $S$ was derived through a comprehensive sampling process across three equally spaced linear polarization settings ($0^\circ, 120^\circ, \text{ and } -120^\circ$). To ensure a representative result on the Bloch sphere, each of these three states was assigned a weight of $1/3$, while each of the four possible Bell state measurement outcomes was weighted equally at $1/4$. The final observed fidelity of $0.853 \pm 0.012$ exceeds the classical bound by eight standard deviations. This result robustly confirms that the dual-degree-of-freedom architecture functioned as a unified quantum processor, providing definitive empirical proof of the successful teleportation of unknown pure quantum states. 
+\subsection{Verification and Comparison with the Classical Limit}
+To verify quantum teleportation, the experimental fidelity ($S$)---representing the average probability of the teleported state passing verification---must exceed the classical communication limit of $0.75$. Exceeding this threshold indicates that entanglement was utilized as a non-local resource.
+
+In the 1998 experiment, $S$ was derived through a sampling process across three equally spaced linear polarization settings ($0^\circ$, $120^\circ$, and $-120^\circ$). To ensure a representative result on the Bloch sphere, each of these three states was assigned a weight of $1/3$, while each of the four possible Bell state measurement outcomes was weighted equally at $1/4$. The final observed fidelity of $0.853 \pm 0.012$ exceeds the classical bound by eight standard deviations. This result confirms that the dual-degree-of-freedom architecture functioned effectively, consistent with the successful teleportation of unknown pure quantum states.
 \label{sec:Experimental Implementation}
 
 
