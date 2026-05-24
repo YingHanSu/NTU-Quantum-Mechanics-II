@@ -112,6 +112,13 @@ This report provides a comprehensive study of quantum teleportation, covering it
 \newpage
 \section{Introduction}
 \label{sec:introduction}
+Quantum teleportation is one of the most striking protocols in quantum information science. Despite its name, it does not mean transporting matter from one place to another. Instead, it refers to the transfer of an unknown quantum state from one physical system to another, without directly sending the original system itself. This is surprising because an unknown quantum state cannot be fully determined by a single measurement, and it also cannot be copied perfectly due to the no-cloning theorem \cite{Wootters1982,Dieks1982}. Therefore, quantum teleportation addresses a fundamental question: how can an unknown quantum state be transferred if it cannot be measured completely or cloned?
+
+The theoretical protocol was first proposed by Bennett \textit{et al}. in 1993 \cite{Bennett}. Their result showed that an unknown qubit can be transferred from Alice to Bob using two resources: a shared entangled pair and two bits of classical communication. Alice performs a joint Bell-state measurement on the unknown qubit and her half of the entangled pair, then sends the classical result to Bob. Depending on this result, Bob applies the appropriate Pauli correction to recover the original state. The protocol therefore demonstrates that entanglement can be used as a physical resource for quantum information processing.
+
+The first experimental demonstrations soon followed. Bouwmeester \textit{et al}. realized quantum teleportation using photonic qubits and Bell-state measurement \cite{Bouwmeester}, while Boschi \textit{et al}. implemented teleportation of an unknown pure state using a dual-degree-of-freedom optical setup \cite{Boschi1998}. Since then, teleportation has developed from a foundational protocol into an important tool for quantum communication. Long-distance demonstrations include active feed-forward teleportation over 143 km in free space \cite{Ma2012}, and ground-to-satellite teleportation over distances up to 1400 km \cite{Ren2017}. These experiments are closely connected to the long-term goal of building a quantum internet, where quantum states and entanglement can be distributed between distant nodes \cite{Kimble2008}. Quantum repeaters, which combine entanglement distribution, purification, and teleportation, are one possible route toward overcoming loss in long-distance quantum communication \cite{Briegel1998}.
+
+In this report, we first introduce the necessary mathematical background, including the Bell state and Bell measurement, to derive the protocol identity. Then, we focus on the optical experiment proposed by Boschi \textit{et al.} Finally, we discuss the applications of teleportation in quantum communication, quantum networks, and quantum computing.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,13 +127,13 @@ This report provides a comprehensive study of quantum teleportation, covering it
 \label{sec:math background}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Qubits and the Hilbert Space Formalism}
-The fundamental unit of quantum information is the "qubit". Unlike classical bit, which takes the value of either 0 or 1 at one of the time, a qubit exists in a two-dimensional Hilbert space $\mathcal{H}=\mathrm{span}\{|0\rangle, |1\rangle\} \cong \mathbb{C}^2$, and its state can be described by a unit vector with an orthonormal computational basis $\{|0\rangle, |1\rangle\}$ \begin{equation}
+The fundamental unit of quantum information is called a qubit. Unlike a classical bit, which takes the value of either 0 or 1 at a given time, a qubit exists in a two-dimensional Hilbert space $\mathcal{H}=\mathrm{span}\{|0\rangle, |1\rangle\} \cong \mathbb{C}^2$, and its state can be described by a unit vector with an orthonormal computational basis $\{|0\rangle, |1\rangle\}$ \begin{equation}
   |\psi\rangle = \alpha|0\rangle+\beta|1\rangle, \ \alpha, \beta \in \mathbb{C}, \  |\alpha|^2+|\beta|^2=1
   \label{Eq: qubit}
 \end{equation}
-where $\alpha$ and $\beta$ are the probability amplitudes: measurement yielding $|0\rangle$ or $|1\rangle$ has a probability $|\alpha|^2$ and $|\beta|^2$, respectively  ~\cite{NielsenChuang2000}. Unlike classical bit, a qubit can exist in a superposition of both states, which has no classical analogue. Physical realization of qubits include the two polarization of photon and two energy levels of an electron in an atom. 
+where $\alpha$ and $\beta$ are the probability amplitudes: measurement yielding $|0\rangle$ or $|1\rangle$ has a probability $|\alpha|^2$ and $|\beta|^2$, respectively  ~\cite{NielsenChuang2000}. Unlike a classical bit, a qubit can exist in a superposition of both states, which has no classical analogue. Physical realizations of qubits include the two polarization states of a photon and two energy levels of an atom or ion. 
 
-\textbf{Bloch Sphere} As an phase factor $e^{i\gamma}$ does not have observable effect, Eq.~\ref{Eq: qubit} can be written in a more general expression \begin{equation}
+\textbf{Bloch Sphere} Since a global phase factor $e^{i\gamma}$ does not have observable effect, Eq.~\ref{Eq: qubit} can be written in a more general expression \begin{equation}
   \ket{\psi} = \cos{\frac{\theta}{2}}\ket{0}+e^{i \varphi}\sin{\frac{\theta}{2}}\ket{1}, \ \theta\in[0,\pi], \ \varphi \in[0,2\pi) 
 \end{equation} 
 The two parameters $\theta$ and $\varphi$ define a unique point on the unit three-dimensional sphere, known as the Bloch sphere as shown in Figure~\ref{fig:bloch sphere}.
@@ -136,14 +143,14 @@ The two parameters $\theta$ and $\varphi$ define a unique point on the unit thre
     \caption{Bloch sphere schematic. An arbitrary qubit can be represented by one point on the sphere~\cite{NielsenChuang2000}.}
     \label{fig:bloch sphere}
 \end{figure} 
-The north pole ($\theta=0$) corresponds to $\ket{0}$, while the south polt corresponds to $\ket{1}$, and every point on the equator represents an equal superposition such as $\ket{+}=(\ket{0}+\ket{1})/\sqrt{2}$. 
+The north pole ($\theta=0$) corresponds to $\ket{0}$, while the south pole corresponds to $\ket{1}$, and every point on the equator represents an equal superposition such as $\ket{+}=(\ket{0}+\ket{1})/\sqrt{2}$. 
 
-\textbf{Multi-qubit systems}. For a system of two qubits, we use the tensor product of the individual Hilbert space $\mathcal{H}_{12}=\mathcal{H}_1\otimes\mathcal{H}_2 \cong \mathbb{C}^4$ to represent the state space, with computational basis kets $\{\ket{00},\ket{01},\ket{10},\ket{11}\}$. Here we use the ordering convention. That is, $\ket{01}=\ket{0}_1\otimes\ket{1}_1$. Similarly, if it is a system of three qubits, then $\ket{010}=\ket{0}_1\otimes\ket{1}_2\otimes\ket{0}_2$. A general two-qubit state takes the form \begin{equation}
+\textbf{Multi-qubit systems}. For a system of two qubits, we use the tensor product of the individual Hilbert space $\mathcal{H}_{12}=\mathcal{H}_1\otimes\mathcal{H}_2 \cong \mathbb{C}^4$ to represent the state space, with computational basis kets $\{\ket{00},\ket{01},\ket{10},\ket{11}\}$. Here we use the ordering convention. That is, $\ket{01}=\ket{0}_1\otimes\ket{1}_2$. Similarly, if it is a system of three qubits, then $\ket{010}=\ket{0}_1\otimes\ket{1}_2\otimes\ket{0}_3$. A general two-qubit state takes the form \begin{equation}
   \ket{\psi}=\alpha_{00}\ket{00}+\alpha_{01}\ket{01}+\alpha_{10}\ket{10}+\alpha_{11}\ket{11}, \ \sum_x|\alpha_x|^2=1
 \end{equation}
 
 \subsection{Entanglement and the Bell States}
-A two-qubit state is called separable if it can be factored as $\ket{\psi \phi}=\ket{\psi}_A\otimes\ket{\psi}_B$. This means that qubit A is in state $\ket{\psi}$, while qubit B is in state $\ket{\phi}$. On the other hand, an entangled state can not be factorized into the product of two single-qubit states. In this case, the quantum state can only be understood as a property of the whole system. 
+A two-qubit state is called separable if it can be factored as $\ket{\psi \phi}=\ket{\psi}_A\otimes\ket{\phi}_B$. This means that qubit A is in state $\ket{\psi}$, while qubit B is in state $\ket{\phi}$. On the other hand, an entangled state cannot be factorized into the product of two single-qubit states. In this case, the quantum state can only be understood as a property of the whole system. 
 The most important entangled states for quantum teleportation are the Bell states~\cite{NielsenChuang2000, Bennett}\begin{equation}
 \begin{aligned}
 |\Phi^+\rangle &= \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle), 
@@ -152,10 +159,10 @@ The most important entangled states for quantum teleportation are the Bell state
 &\quad |\Psi^-\rangle &= \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle).
 \end{aligned}
 \end{equation}
-These four states form an orthonormal basis for the two-qubit Hilbert space. Besides, they are maximally entangled: tracing out either qubit leaves the reduced density matrix $\rho=I/2$, where $I$ is the identity matrix. For example, consider the Bell state $\ket{\Phi^+}_{AB}$, then the corresponding density matrix is $\rho_{AB}=\ket{\Phi^+}\bra{\Phi^+}$. Now, if we only look at the qubit A subsystem, we trace out qubit B to get the reduced density matrix as \begin{equation}
+These four states form an orthonormal basis for the two-qubit Hilbert space. These states are also maximally entangled as tracing out either qubit leaves the reduced density matrix $\rho=I/2$, where $I$ is the identity matrix. For example, consider the Bell state $\ket{\Phi^+}_{AB}$, then the corresponding density matrix is $\rho_{AB}=\ket{\Phi^+}\bra{\Phi^+}$. Now, if we only look at the qubit A subsystem, we trace out qubit B to get the reduced density matrix as \begin{equation}
   \rho_A=\tr_B(\rho_{AB})=\frac{I_A}{2}.
-\end{equation} Similarly, we have $\rho_B=\frac{I_B}{2}$. This implies that when measuring either qubit, we get equal probability of getting $\ket{0}$ or $\ket{1}$. However, the measurement results of system A and system B are perfectly correlated. For example, if system A measure the entangled state and gets $\ket{0}$, then B gets $\ket{0}$. Similarly, if A obtains $\ket{1}$, then B gets $\ket{1}$. That is, each local measurement result is random, but it becomes highly correlated once we look at the system as a whole.
-\subsection{Quantum Measurement and Bell Measurement} The projection postulate state that measurement irreversibly collapses the superposition state into one of its components~\cite{Bouwmeester}. Therefore, measurement on the qubit is a physical process that will disturb the original state. A projective measurement is described by a Hermitian observable $M=\sum_m mP_m$, where $\{P_m\}$ are orthogonal projection operator onto the eigenspace of $M$ with eigenvalue $m$ and satisfy $\sum_m P_m=I$ and $P_mP_{m'}=\delta_{mm'}P_m$. Given a pure state $\ket{\psi}$, the probability of obtaining outcome $m$ is \begin{equation}
+\end{equation} Similarly, we have $\rho_B=\frac{I_B}{2}$. This implies that when measuring either qubit, we get equal probability of getting $\ket{0}$ or $\ket{1}$. However, the measurement results of system A and system B are perfectly correlated. For example, if measuring qubit A gives $\ket{0}$, then measuring qubit B in the same basis gives $\ket{0}$. Similarly, if A gives $\ket{1}$, then B also gives $\ket{1}$. That is, each local measurement result is random, but it becomes highly correlated once we look at the system as a whole.
+\subsection{Quantum Measurement and Bell Measurement} The projection postulate states that measurement irreversibly collapses the superposition state into one of its components~\cite{NielsenChuang2000}. Therefore, measurement on the qubit is a physical process that will disturb the original state. A projective measurement is described by a Hermitian observable $M=\sum_m mP_m$, where $\{P_m\}$ are orthogonal projection operators onto the eigenspace of $M$ with eigenvalue $m$ and satisfy $\sum_m P_m=I$ and $P_mP_{m'}=\delta_{mm'}P_m$. Given a pure state $\ket{\psi}$, the probability of obtaining outcome $m$ is \begin{equation}
   p(m)=\bra{\psi}P_m\ket{\psi}
 \end{equation}
 and the post-measurement state collapses to~\cite{NielsenChuang2000} \begin{equation}
@@ -168,11 +175,11 @@ and the post-measurement state collapses to~\cite{NielsenChuang2000} \begin{equa
 p(1)&=\bra{\psi}P_1\ket{\psi}=|\beta|^2,
 &\quad  P_1\ket{\psi}&=\ket{1}\bra{1}(\alpha\ket{0}+\beta\ket{1})=\beta\ket{1}.\\
   \end{aligned}
-\end{equation} Therefore, a direct measurement gives either 0 or 1, and the original coefficients disappear due to the normalization (Equation~\ref{Eq:post-measurement normalization}), and thus the original qubit state is no longer available.
-In order to maintain the original qubit state, in quantum teleportation, a Bell measurement is performed on a two-qubit system. Similar to the projective measurement, we define the Bell-measurement projectors as \begin{equation}
+\end{equation} 
+The projection $P_0$ and $P_1$ keep only $\ket{0}$ and $\ket{1}$ components, respectively. In other words, the post-measurement state becomes either $\ket{0}$ or $\ket{1}$. Therefore, the original superposition is generally destroyed. For the teleportation protocol, we also need a two-qubit projective measurement called the Bell measurement. Instead of measuring each qubit separately in the computational basis, a Bell measurement projects the two-qubit system onto the Bell basis. Its role in teleportation will be discussed in the next section. Similar to the projective measurement, we define the Bell-measurement projectors as \begin{equation}
   P_k=\ket{\beta_k}\bra{\beta_k}, \ \ket{\beta_k}\in\{\ket{\Psi^{\pm}},\ket{\Phi^{\pm}}\}.
-\end{equation} Thus, a Bell measurement yields one of the Bell states. That is, computational-basis measurement tells us whether each qubit is individually in $\ket{0}$ or $\ket{1}$, while a Bell measurement implies which Bell state the two-qubit system occupies as a whole. 
-\subsection{Pauli Operators and Unitary Correction}
+\end{equation} Thus, a Bell measurement yields one of the four Bell-state outcomes. That is, computational-basis measurement tells us whether each qubit is individually in $\ket{0}$ or $\ket{1}$, while a Bell measurement determines which Bell state the two-qubit system occupies as a whole. 
+\subsection{Pauli Operators and Unitary Corrections}
 The Pauli operators are a set of $2\times2$ unitary matrices forming a basis for the space of single-qubit operators~\cite{NielsenChuang2000}:\begin{equation}
 \begin{aligned}
 I = \left(\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right),
@@ -180,23 +187,23 @@ I = \left(\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right),
 Z = \sigma_3=\left(\begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right),
 &\qquad Y =\sigma_2= iXZ = \left(\begin{array}{cc} 0 & -i \\ i & 0 \end{array}\right).
 \end{aligned}
-\end{equation}These are the standard single-qubit Pauli operators used in the quantum information. In particular, $X$ is a bit-flip operator ($X\ket{0}=\ket{1},\ X\ket{1}=\ket{0}$), $Z$ acts as a phase-flip operator ($Z\ket{0}=\ket{0}, \ Z\ket{1}=-\ket{1}$), while $Y$ is the same operator as $XZ$ up to a phase factor. Therefore, we will just use $XZ$ in the later protocal operation. These four operators $\{I,\ X,\ Z,\ XZ\}$ will serve as the unitary correction operators for Bob to recover the original quantum state after Alice's Bell measurement.
+\end{equation}These are the standard single-qubit Pauli operators used in quantum information. In particular, $X$ is a bit-flip operator ($X\ket{0}=\ket{1},\ X\ket{1}=\ket{0}$), $Z$ acts as a phase-flip operator ($Z\ket{0}=\ket{0}, \ Z\ket{1}=-\ket{1}$), while $Y$ is the same operator as $XZ$ up to a phase factor. Therefore, in the teleportation protocol below, we will use $XZ$ as the fourth correction operation. These four operators $\{I,\ X,\ Z,\ XZ\}$ will serve as the unitary correction operators for Bob to recover the original quantum state after Alice's Bell measurement.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Standard quauntum teleportation protocal}
-\label{sec:protocal}
-In this chapter, we use the mathmatical tools introduced in the previous chapter to derive the standard quantum teleportation protocal. The goal of the protocol is to transfer an unknown quantum state from Alice to Bob without physically sending the original qubit through a quantum channel. Instead, the protocol uses one shared Bell pair, one Bell measurement, two bits of classical communication, and a conditional Pauli correction.
+\section{Standard Quantum Teleportation Protocol}
+\label{sec:protocol}
+In this section, we use the mathematical tools introduced above to derive the standard quantum teleportation protocol. The goal of the protocol is to transfer an unknown quantum state from Alice to Bob without physically sending the original qubit through a quantum channel. Instead, the protocol uses one shared Bell pair, one Bell measurement, two bits of classical communication, and a conditional Pauli correction.
 
 Suppose Alice has an unknown qubit state \begin{equation}
   \ket{\psi}_1=\alpha\ket{0}_1+\beta\ket{1}_1,\ |\alpha|^2+|\beta|^2=1.
-\end{equation} Here the subscript 1 labels the unknown input qubit. Alice does not know the coefficients, and she may not measure it directly as the post-measurement state would collapse. Therefore, Alice and Bob share an entangled Bell pair, say \begin{equation}
+\end{equation} Here the subscript 1 labels the unknown input qubit. Alice does not know the coefficients $\alpha$ and $\beta$, and she cannot determine them by a direct measurement because the state would collapse. Before the protocol begins, Alice and Bob are assumed to share an entangled Bell pair, say \begin{equation}
   \ket{\Phi^+}_{23}=\frac{1}{\sqrt{2}}(\ket{00}_{23}+\ket{11}_{23}),
-\end{equation} where qubit 2 and 3 are held by Alice and Bob respectively. The total initial state of the three-qubit system is \begin{equation}
+\end{equation} where qubits 2 and 3 are held by Alice and Bob, respectively. The total initial state of the three-qubit system is \begin{equation}
   \begin{aligned}
     \ket{\Psi}_{123}&=\ket{\psi}_1\ket{\Phi^+}_{23}\\
     &=\frac{1}{\sqrt{2}}\left(\alpha\ket{000}_{123}+\alpha\ket{011}_{123}+\beta\ket{100}_{123}+\beta\ket{111}_{123}\right),
   \end{aligned}
-\end{equation}where in the second line of the equation we expand the total qubit state. Since Alice will perform a Bell measurement on qubit 1 and 2, this suggests us to express the computational basis $\ket{}_{12}$ in terms of the Bell states as \begin{equation}
+\end{equation}where in the second line of the equation we expand the total qubit state. Since Alice will perform a Bell measurement on qubits 1 and 2, it is useful to rewrite the state in the Bell basis of these two qubits as \begin{equation}
 \begin{aligned}
 \ket{00}_{12}
 &=
@@ -287,7 +294,7 @@ Suppose Alice has an unknown qubit state \begin{equation}
 \right].
 \label{Eq:teleportation_identity}
 \end{equation}
-This equation is the central identity of quantum teleportation. It shows that when qubits 1 and 2 are written in the Bell basis, Bob's qubit 3 is related to the original input state by one of four possible Pauli operations. Alice now perform a Bell measurement on qubits 1 and 2. According to the projection postulate, the total state collapses into one of the four Bell states with equal probability. If Alice obtains the outcome $\ket{\Phi^+}_{12}$, then Bob's qubit is simply $\ket{\psi}_3$. With no extra correction, the unknown qubit is teleported to Bob. If Alice get $\ket{\Phi^-}_{12}$, then Bob's qubit is $Z\ket{\psi}_3$. Bob need to apply $Z$ so that $Z(Z\ket{\psi}_3)=Z^2\ket{\psi}_3=\ket{\psi}_3$. Similarly, if Alice obtains $\ket{\Psi^+}_{12}$, Bob gets $X\ket{\psi}_3$ and need to perform $X$ so that $X(X\ket{\psi}_3)=X^2\ket{\psi}_3=\ket{\psi}_3$. Finally, if Alice obtains $\ket{\Psi^-}_{12}$, Bob apply $ZX$ such that $ZX(XZ\ket{\psi}_3)=\ket{\psi}_3$. These four cases can be summarized into the following table as \begin{equation}
+This equation is the central identity of quantum teleportation. It shows that when qubits 1 and 2 are written in the Bell basis, Bob's qubit 3 is related to the original input state by one of four possible Pauli operations. Alice now performs a Bell measurement on qubits 1 and 2. According to the projection postulate, the total state collapses into one of the four Bell states with equal probability. If Alice obtains the outcome $\ket{\Phi^+}_{12}$, then Bob's qubit is already $\ket{\psi}_3$. After Alice communicates this outcome, Bob knows that the correct operation is simply $I$. If Alice gets $\ket{\Phi^-}_{12}$, then Bob's qubit is $Z\ket{\psi}_3$. Bob needs to apply $Z$ so that $Z(Z\ket{\psi}_3)=Z^2\ket{\psi}_3=\ket{\psi}_3$. Similarly, if Alice obtains $\ket{\Psi^+}_{12}$, Bob gets $X\ket{\psi}_3$ and needs to apply $X$ so that $X(X\ket{\psi}_3)=X^2\ket{\psi}_3=\ket{\psi}_3$. Finally, if Alice obtains $\ket{\Psi^-}_{12}$, Bob applies $ZX$ such that $ZX(XZ\ket{\psi}_3)=\ket{\psi}_3$. These four cases can be summarized into the following table as \begin{equation}
 \begin{array}{c|c|c}
 \text{Alice's Bell outcome} 
 & \text{Bob's state before correction} 
@@ -300,22 +307,24 @@ This equation is the central identity of quantum teleportation. It shows that wh
 \end{array}
 \label{Eq:teleportation_correction_table}
 \end{equation}
-After Alice's measurement, she need to tell Bob which one of these four Bell states she got. Since one classical bit has two possible values, 0 and 1, two classical bits can represent four possible messages: 00, 01, 10, and 11. This is enough to label the four Bell-measurement outcomes. For example, they may agree that 00 correspons to $\ket{\Phi^+}_{12}$. That is, with a two-classical-bit channel, Alice can transport her measurement result to Bob so that he can perform the corresponding correction operation to get the original unknown qubit state. In source language, the teleportation protocal can be summarized as
+After Alice's measurement, she needs to tell Bob which one of these four Bell states she got. Since one classical bit has two possible values, 0 and 1, two classical bits can represent four possible messages: 00, 01, 10, and 11. This is enough to label the four Bell-measurement outcomes. For example, they may agree that 00 corresponds to $\ket{\Phi^+}_{12}$. Alice sends this two-bit message to Bob through a classical channel. Once Bob receives it, he knows which Pauli correction to apply and can recover the original unknown state. In resource language, the teleportation protocol can be summarized as
 \begin{equation}
-  1\ \mathrm{ebit}+2\ \mathrm{classical \ bits}\to 1 \mathrm{transmitted\ qubit}.
+  1\ \mathrm{ebit}+2\ \mathrm{classical \ bits}\to 1\ \mathrm{transmitted\ qubit}.
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Physical meaning and experimental relevance}
+\section{Physical Implications of Quantum Teleportation}
 \label{sec:Physical meaning}
-After deriving the standard teleportation protocol, it is important to clarify what the protocol does and does not imply physically. Quantum teleportation transfers an unknown quantum state from Alice's qubit to Bob's qubit, but it does not transfer matter, does not create a second copy of the state, and does not allow faster-than-light communication. The protocol works only because of the shared entangled pair and a classical bit channel. In this section, we discuss these physical implications and then connect the ideal protocol to experimental realization.
+After deriving the standard teleportation protocol, it is important to clarify what the protocol does and does not imply physically. Quantum teleportation transfers an unknown quantum state from Alice's qubit to Bob's qubit, but it does not transfer matter, does not create a second copy of the state, and does not allow faster-than-light communication. The protocol works only by combining a shared entangled pair with a two-bit classical communication channel. In this section, we discuss these physical implications and explain why the protocol is consistent with the basic principles of quantum mechanics and relativity.
 \subsection{No-Cloning}
 Quantum teleportation does not create a second copy of the unknown quantum state. Although Bob's final qubit becomes $\ket{\psi}_3 = \alpha\ket{0}_3 + \beta\ket{1}_3$, Alice's original qubit is no longer available after the Bell measurement. The Bell measurement projects qubits 1 and 2 into one of the four Bell 
 states, and therefore irreversibly destroys the original unknown state 
 on Alice's side. This is why quantum teleportation is consistent with the no-cloning 
-theorem. The no-cloning theorem, first formulated by Wootters and 
+theorem. 
+
+The no-cloning theorem, first formulated by Wootters and 
 Zurek~\cite{Wootters1982} and independently by Dieks~\cite{Dieks1982}, 
 states that it is impossible to make an exact copy of an arbitrary 
 unknown quantum state. The proof is straightforward. Suppose there 
@@ -337,7 +346,7 @@ destroyed by measurement. Therefore, teleportation should be understood
 as state transfer rather than state duplication.
 \subsection{No Faster-Than-Light Communication}
 Quantum teleportation also does not allow faster-than-light 
-communication. Although the shared Bell pair provides nonclassical correlations between Alice and Bob, Bob cannot recover the unknown state before receiving Alice's classical message. That is, Bob needs Alice's message so that he knows what operation he should apply to recover the unkown qubit. 
+communication. Although the shared Bell pair provides nonclassical correlations between Alice and Bob, Bob cannot recover the unknown state before receiving Alice's classical message. That is, Bob needs Alice's message so that he knows what operation he should apply to recover the unknown qubit. 
 This can be made more precise by looking at Bob's reduced density matrix 
 before the classical message arrives. Since the four Bell-measurement 
 outcomes occur with equal probability, Bob's local state is an average 
@@ -357,14 +366,21 @@ this average becomes
 \end{equation}
 Thus, before receiving Alice's classical message, Bob's local state is 
 completely mixed and independent of $\alpha$ and $\beta$. Any 
-measurement Bob performs locally gives random results and reveals no information about the unknown input state. Bennett et al.~\cite{Bennett} emphasized this point in the original teleportation paper: if Bob tries to complete the protocol by guessing Alice's classical message before it arrives, his state is only a maximally mixed state and gives no information about the input state.
+measurement Bob performs locally gives random results and reveals no information about the unknown input state. Bennett \textit{et al}.~\cite{Bennett} emphasized this point in the original teleportation paper: if Bob tries to complete the protocol by guessing Alice's classical message before it arrives, his state is only a maximally mixed state and gives no information about the input state. Therefore, Bob cannot extract any information about $\ket{\psi}$ before receiving Alice's two-bit message. Since that message must be sent through a classical channel, teleportation cannot be used for faster-than-light communication.
 \subsection{Security of the Classical Message}
+Alice's two classical bits are necessary for Bob to complete the teleportation protocol, but they do not carry the unknown quantum state itself. They only specify which Bell-measurement outcome Alice obtained, and therefore which Pauli correction Bob should apply.
+
+This follows from Eq.~\ref{Eq:teleportation_identity}. Alice's Bell measurement has four possible outcomes, each occurring with probability 1/4, independent of the input state $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$. Thus, the classical message is statistically independent of $\alpha$ and $\beta$. If an eavesdropper intercepts only the classical channel, they may know whether Alice sent 00, 01, 10, or 11, but this only reveals the correction label, not the teleported state.
+
+The shared Bell pair alone also does not contain the unknown state, since it is prepared before Alice receives $\ket{\psi}$. Bob can reconstruct the state only when the shared entanglement, Alice's Bell measurement, the two-bit classical message, and the corresponding Pauli correction are combined.
+
+This separation between classical communication and quantum information is one reason why teleportation is a central primitive in quantum communication and quantum networks~\cite{Pirandola2015}. This does not mean that teleportation by itself is a complete encryption protocol. Rather, it shows that the classical message alone carries no information about the unknown quantum amplitudes. The reconstruction of the state requires the full protocol, including the shared entanglement.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Experimental Implementation via Dual-Photon Entanglement}
 
 \subsection{The Quantum Leap from Theory to Lab}
-The 1998 experiment by Boschi et al. marked a paradigm shift in realizing quantum information protocols. While the canonical Bennett et al. (1993) model required three independent photons—posing formidable temporal synchronization hurdles—this design utilized a sophisticated two-photon, dual-degree-of-freedom architecture. By exploiting both the momentum (path or k-vector) and polarization of a single entangled photon pair, researchers accessed a four-dimensional Hilbert space ($2 \text{ paths} \times 2 \text{ polarizations}$) within a bipartite system. This architectural innovation addressed two primary limitations of prior configurations:
+The 1998 experiment by Boschi \textit{et al}. marked a paradigm shift in realizing quantum information protocols. While the canonical Bennett \textit{et al}. (1993) model required three independent photons—posing formidable temporal synchronization hurdles—this design utilized a sophisticated two-photon, dual-degree-of-freedom architecture. By exploiting both the momentum (path or k-vector) and polarization of a single entangled photon pair, researchers accessed a four-dimensional Hilbert space ($2 \text{ paths} \times 2 \text{ polarizations}$) within a bipartite system. This architectural innovation addressed two primary limitations of prior configurations:
 
 \begin{itemize}
     \item \textbf{100\% Success Rate in Bell State Measurement:} Unlike linear-optics three-photon schemes (bounded by a 50\% success rate), this approach permits projection onto the complete Bell basis, enabling the deterministic identification of all four states simultaneously.
