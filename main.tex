@@ -110,6 +110,7 @@ This report provides a comprehensive study of quantum teleportation, covering it
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+
 \section{Introduction}
 \label{sec:introduction}
 Quantum teleportation is one of the most striking protocols in quantum information science. Despite its name, it does not mean transporting matter from one place to another. Instead, it refers to the transfer of an unknown quantum state from one physical system to another, without directly sending the original system itself. This is surprising because an unknown quantum state cannot be fully determined by a single measurement, and it also cannot be copied perfectly due to the no-cloning theorem \cite{Wootters1982,Dieks1982}. Therefore, quantum teleportation addresses a fundamental question: how can an unknown quantum state be transferred if it cannot be measured completely or cloned?
@@ -391,8 +392,10 @@ The experimental execution begins at the EPR source, where the quantum channel i
 
 \subsection{Implementation of the Dual-Degree-of-Freedom Setup}
 
-\subsubsection{\textbf{Generation of the EPR Entangled Source}}
-Entanglement is generated via Type-II spontaneous parametric down-conversion (SPDC). Specifically, a 200 mW, 351.1 nm ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this initial polarization entanglement is converted into spatial path entanglement via birefringent calcite crystals (C), which split the incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
+
+\subsubsection{The EPR Source: Converting Light into Entanglement}
+Entanglement is generated via Type-II spontaneous parametric down-conversion (SPDC). Specifically, a 200 mW, 351.1 nm ultraviolet argon laser pumps a $\beta$-barium borate (BBO) crystal, producing polarization-entangled photon pairs at 702.2 nm. To facilitate the dual-degree architecture, this initial polarization entanglement is deterministically converted into spatial path entanglement via birefringent calcite crystals (C), which split the incident photons into discrete spatial paths ($a$ and $b$). The resulting EPR state is described by:
+
 $$|\Psi\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)$$
 
 Photon 1 is routed toward Alice's station, while photon 2 traverses backreflected paths $a_2$ and $b_2$ through the BBO crystal toward Bob.
@@ -404,20 +407,23 @@ Photon 1 is routed toward Alice's station, while photon 2 traverses backreflecte
     \label{fig:experimental_setup}
 \end{figure}
 
-\subsubsection{\textbf{Preparation and Encoding of the Unknown State}}
-A logical distinction is maintained between the Preparer and Alice. To ensure the state $|\phi\rangle$ remains unknown to Alice, the Preparer encodes it onto photon 1's polarization before it reaches Alice's apparatus. This relies on local unitary operations on paths $a_1$ and $b_1$:
+
+\subsubsection{The Preparer: Encoding the Unknown State}
+A strict logical distinction is maintained between the Preparer and Alice. To ensure the state $|\phi\rangle$ remains fundamentally "unknown," the Preparer encodes it onto photon 1's polarization before it reaches Alice's apparatus. This relies on local unitary operations on paths $a_1$ and $b_1$:
+
 
 \begin{itemize}
-    \item \textbf{Polarization Initialization:} Photon 1 enters with an initial defined polarization (typically vertical, $|v\rangle_1$).
-    \item \textbf{Unitary Manipulation:} Quarter-wave plates and Fresnel rhomb rotators (R) transform this into a general pure state: $|\phi\rangle=\alpha|v\rangle_1+\beta|h\rangle_1$.
-    \item \textbf{Path Independence:} Operating identically on paths $a_1$ and $b_1$, the polarization state effectively factors out of the path entanglement. 
+    \item Polarization Initialization: Photon 1 enters with an initial defined polarization (typically vertical, $|v\rangle_1$).
+    \item Unitary Manipulation: Quarter-wave plates and Fresnel rhomb rotators (R) transform this into a general pure state: $|\phi\rangle=\alpha|v\rangle_1+\beta|h\rangle_1$.
+    \item Path Independence: Operating identically on paths $a_1$ and $b_1$, the polarization state effectively factors out of the path entanglement. 
 \end{itemize}
 
 This yields a global tripartite system where the unknown polarization is carried by the path-entangled photon 1:
 $$|\Psi_{total}\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|a_2\rangle+|b_1\rangle|b_2\rangle)(\alpha|v\rangle_1+\beta|h\rangle_1)|h\rangle_2$$
 
-\subsubsection{\textbf{Interferometric Bell State Measurement}}
-Alice’s Bell State Measurement (BSM) interferometer projects photon 1's bipartite state onto four orthogonal path-polarization Bell states:
+
+\subsubsection{Alice's BSM Engine: Interferometric Bell State Measurement}
+Alice's Bell State Measurement (BSM) interferometer projects photon 1's bipartite state onto four orthogonal path-polarization Bell states:
 $$|c^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|v\rangle_1\pm|b_1\rangle|h\rangle_1)$$
 $$|d^\pm\rangle=\frac{1}{\sqrt{2}}(|a_1\rangle|h\rangle_1\pm|b_1\rangle|v\rangle_1)$$
 
@@ -432,7 +438,8 @@ The BS is mounted on a micrometrical stage to precisely tune the path-length dif
 \end{itemize}
 This measurement determines the unitary operation Bob must perform to reconstruct the initial state.
 
-\subsubsection{\textbf{Passive Reconstruction and State Verification}}
+
+\subsubsection{Bob's Station: Reconstructing the Teleported State}
 At the receiving station, photon 2 arrives via trajectories $a_2$ and $b_2$. To resolve the path entanglement, polarization in path $a_2$ is orthogonally rotated by $90^\circ$ via a half-wave plate before recombining with path $b_2$ at the polarizing beam splitter ($PBS_B$).
 
 Bob employs \textit{passive reconstruction}. Rather than dynamically rotating the state using active electro-optic switches, he reorients his measurement basis to verify the teleported state based on Alice's classical transmission.
@@ -455,25 +462,455 @@ In the 1998 experiment, $S$ was derived through a sampling process across three 
 \section{Variants of Quantum Teleportation}
 
 \subsection{Optical Modes System: Continuous-Variable Teleportation}
-\subsection{Atomics Ensembles and Trapped Ion System}
+
+In the previous chapter, we explored the standard quantum teleportation protocol, which is based on discrete-variable (DV) systems and uses photonic qubits as the information carriers. Now, it is reasonable to ask the following question: can we construct a teleportation protocol in an infinite-dimensional Hilbert space instead of only a two-dimensional one?
+
+The answer is yes. Instead of encoding quantum information in a two-level system such as
+Eq.\ref{Eq: qubit}. Continuous-variable (CV) teleportation uses quantum states of optical modes. A single optical mode is mathematically equivalent to a quantum harmonic oscillator, whose Hilbert space is spanned by the infinite set of Fock states: $\ket{0}, \ket{1}, \ket{2}, \cdots $. Therefore, the state to be teleported is no longer restricted to a qubit. It can be an arbitrary state of one mode of the electromagnetic field, described by continuous quadrature variables. 
+Now I'll give example for CV telelporation using optical modes.
+
+For an optical mode with annihilation  operator $\hat{a}$, we define the field quadratures
+\begin{equation}
+    \hat{x} = \frac{1}{\sqrt{2}}(\hat{a}+\hat{a}^{\dagger}),
+    \qquad
+    \hat{p} = \frac{1}{i\sqrt{2}}(\hat{a}-\hat{a}^{\dagger});
+    \quad 
+    [\hat{x},\hat{p}] = i
+\end{equation}
+which are analogous to the position and momentum operators of a harmonic oscillator. 
+A quantum state of the optical mode can then be represented in phase space by a Wigner function
+\begin{equation}
+    W_{\text{in}}(\alpha
+    ) ~;~ \alpha = x+ip.
+    \label{Eq:Wigner_function_input}
+\end{equation}
+
+
+Thus, we get the continuous-variable version of the EPR state, which is charaterzied by $x$ and $p$ field quadratures. 
+And in reality we cannot create a perfect correlated EPR state between Alices and Bobs because that would require infinite squeezing and therefore infinite energy.
+Instead, we often adopt convential correlation relations
+used by Braunstein and Kimble\cite{PhysRevLett.80.869}. With $x_1$ and $p_1$ being the quadratures of Alice's mode, and $x_2$ and $p_2$ being the quadratures of Bob's mode, the EPR correlations can be expressed as
+\begin{equation}
+    x_1 + x_2 \rightarrow 0,
+    \qquad
+    p_1 - p_2 \rightarrow 0.
+    \label{Eq:Correlation}
+\end{equation}
+
+With the physics defined clearly we can now see how the continuous-variable teleportation protocol works. 
+Initially, Alice is given an unknown input state as Eq.\ref{Eq:Wigner_function_input},
+which she wants to teleport to Bob. And Alice and Bob share an EPR state with the correlation in Eq.\ref{Eq:Correlation}. 
+
+Starting the teleportation, Alice first combines the unknown input mode with her half of the EPR pair on a 50/50 beam splitter(the lower beam splitter in the green area in Fig.\ref{fig:CV_teleportation_diagram}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/Unconditional teleportation_setup.png}3
+    \caption{Diagram of the continuous-variable teleportation experiment by Braunstein and Kimble \cite{PhysRevLett.80.869}.}
+    \label{fig:CV_teleportation_diagram}
+\end{figure}
+
+The beam splitter produces two output modes,
+\begin{equation}
+    \hat{a}_{a} = \frac{1}{\sqrt{2}}(\hat{a}_{1}+\hat{a}_{\text{in}}),
+    \qquad
+    \hat{a}_{b} = \frac{1}{\sqrt{2}}(\hat{a}_{1}-\hat{a}_{\text{in}}).
+\end{equation}
+
+
+
+She then performs balanced homodyne measurements on these two modes. Specifically, she measures the quadrature combinations
+\begin{equation}
+    x_a = \frac{1}{\sqrt{2}}(x_{\text{in}}-x_1),
+    \qquad
+    p_b = \frac{1}{\sqrt{2}}(p_{\text{in}}+p_1).
+\end{equation}
+These measurement outcomes are ordinary classical numbers. Alice sends the values of $x_a$ and $p_b$ to Bob through a classical communication channel($i_x$ and $i_p$ in Fig.\ref{fig:CV_teleportation_diagram}).
+
+After receiving Alice's measurement results, Bob applies a phase-space displacement to his optical mode. 
+In terms of the complex amplitude, this displacement can be written as
+\begin{equation}
+    \alpha_{\text{out}}
+    =
+    \alpha_2 + \sqrt{2}(x_a - i p_b)
+    =
+    g\alpha_{\text{in}} + [(x_2 -gx_1) + i(p_2 - g p_1)].
+\end{equation}
+where $g$ describes Bob's (suitably normalized) gainfor the transformation from photocurrent tooutput field.
+
+Using the EPR correlations in Eq.\ref{Eq:Correlation}, 
+we can see why this reconstructs the input state. For the $x$ and $p$ quadrature,
+\begin{equation}
+\left\{
+\begin{aligned}
+x_{\text{out}}
+&= x_2 + \sqrt{2}x_a
+ = x_2 + x_1 + x_{\text{in}}
+ \approx x_{\text{in}}, \\[4pt]
+p_{\text{out}}
+&= p_2 - \sqrt{2}p_b
+ = p_2 - p_1 + p_{\text{in}}
+ \approx p_{\text{in}}.
+\end{aligned}
+\right.
+\end{equation}
+Thus, Bob's output mode becomes a copy of Alice's unknown input state, up to the error caused by finite squeezing and imperfect detection.
+In terms of the Wigner function, the output state is a convolution of the input state with a Gaussian noise:
+\begin{equation}
+    W_{\text{out}}(\alpha)
+    =
+    W_{\text{in}}(\alpha) * G_s(\alpha).
+\end{equation}
+Here, $G_s$ is a Gaussian distribution whose variance is determined by the amount of squeezing. For ideal detection,
+\begin{equation}
+    s = e^{-2r},
+\end{equation}
+where $r$ is the squeezing parameter. Therefore, in the limit of infinite squeezing,
+\begin{equation}
+    r \rightarrow \infty,
+    \qquad
+    e^{-2r} \rightarrow 0,
+\end{equation}
+the Gaussian noise vanishes and the output state becomes exactly equal to the input state:
+\begin{equation}
+    W_{\text{out}}(\alpha) \rightarrow W_{\text{in}}(\alpha).
+\end{equation}
+
+For realistic detectors, however, the output contains additional noise due to imperfect detection efficiency. If the detector amplitude efficiency is $\eta$, the effective noise becomes
+
+\begin{equation}
+    \bar{s}
+    =
+    e^{-2r}
+    +
+    \frac{1-\eta^2}{\eta^2}.
+\end{equation}
+
+This equation shows the two main limitations of practical CV teleportation, which are finite squeezing and detector loss. 
+Increasing the squeezing reduces the first term, while improving the homodyne detection efficiency reduces the second term.
+
+Up until now, we have described the typical teleportation for continuous variables. 
+Yet, we didn't seems to mention how significant this protocal is or how significant "quantum teleportation" is in general. 
+A useful way to understand the importance is to compare quantum teleportation with a purely classical strategy.
+If there is no entanglement between the shared state, corresponding to $r=0$, Alice can only measure the input state and tell Bob what state to prepare.
+However, because $\hat{x}$ and $\hat{p}$ do not commute, Alice cannot measure both quadratures perfectly at the same time. The measurement necessarily adds quantum noise.
+Bob's reconstruction also adds noise. Therefore, the classical measure-and-prepare protocol cannot perfectly reproduce the input quantum state. 
+In contrast, when $r>0$, Alice and Bob share genuine EPR entanglement, and the teleportation fidelity($F = \langle \psi_{\text{in}} | \rho_{\text{out}} | \psi_{\text{in}} \rangle$) can exceed what's possible with classical methods (see Fig.\ref{fig:fidelity_plot}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/Quantum vs classical.png}
+    \caption{Experimental result by Braunstein and Kimble\cite{PhysRevLett.80.869}. The left figure is the variance of the Bob's state vesus $g^2$, and the right figure shows the fidelity versus $g^2$.
+     The orange line indicates the classical teleporation and blue indicates the quantum teleportation.}
+    \label{fig:fidelity_plot}
+\end{figure}
+
+In a nutshell, continuous-variable teleportation extends the original teleportation idea from finite-dimensional qubits to infinite-dimensional optical modes. 
+The unknown state is encoded in the quadrature amplitudes of an electromagnetic field mode, which is easily to measure and recreate experimentally. 
+The quality of teleportation is limited by finite squeezing and detector inefficiency, but with sufficient squeezing the protocol can teleport genuinely nonclassical optical states with fidelity beyond any classical measure-and-prepare scheme.
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Atomic Ensemble Systems}
+\label{subsec:atomic_ensemble_systems}
+
+Unlike using photons as the source of quantum information like we discussed above, we can also use atoms as the information carriers.
+Atomic ensambles in nature are better suited for local storage and synchronization, while photons are better suited for long-distance transmission. 
+Before talking about teleporation using atomic ensembles, I think we quickly go over how we can prepare EPR via atoms first introduce by Hagley \textit{et al.} \cite{Hagley1997}.
+In the experiment, two rubidium atoms passed one after another through a high-\(Q\) microwave cavity. The first atom was initially prepared in an excited circular Rydberg state \(\ket{e}\)\\($\mathrm{D_e}$ in Fig. \ref{fig:Hagley}), 
+the second in a lower state \(\ket{g}\) ($\mathrm{D_g}$ in Fig. \ref{fig:Hagley}), and the cavity was initially in the vacuum state \(\ket{0}\).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/EPR via atom setup.png}
+    \caption{Diagram of the experiment by Hagley \textit{et al.} \cite{Hagley1997}.}
+    \label{fig:Hagley}
+\end{figure}
+
+The initial state was therefore,
+\begin{equation}
+    \ket{\Psi_{\mathrm{in}}}
+    =
+    \ket{e_1,g_2,0}.
+\end{equation}
+The first atom interacted with the cavity for a time corresponding to a \(\pi/2\) Rabi pulse. This produced a superposition in which the first atom either remained excited and left the cavity empty, or emitted one photon into the cavity:
+\begin{equation}
+    \ket{\Psi'}
+    =
+    \frac{1}{\sqrt{2}}
+    \left(
+        \ket{e_1,g_2,0}
+        -
+        \ket{g_1,g_2,1}
+    \right).
+\end{equation}
+The second atom then interacted with the cavity for a \(\pi\) pulse. If the photon was present, the second atom absorbed it and was promoted from \(\ket{g}\) to \(\ket{e}\). After this process, the cavity returned to the vacuum state, while the two atoms were left in the entangled EPR state
+\begin{equation}
+    \ket{\Psi_{\mathrm{EPR}}}
+    =
+    \frac{1}{\sqrt{2}}
+    \left(
+        \ket{e_1,g_2}
+        -
+        \ket{g_1,e_2}
+    \right).
+\end{equation}
+
+
+Thus, the cavity field acted as an intermediate quantum bus, which started and ended in the vacuum state, but during the process it mediated the entanglement between the two atoms. The atoms were separated by a distance on the order of a centimeter, showing that EPR-type entanglement could be produced between spatially separated massive particles.
+The connection to atomic ensemble teleportation becomes clearer when one replaces individual atoms by collective atomic excitations. In an ensemble, the quantum information is not stored in one specific atom, but in a coherent collective mode shared among many atoms.
+This collective enhancement increases the effective coupling between light and matter and allows the ensemble to behave like a single effective quantum memory. Depending on the encoding, atomic ensembles can be used either in a continuous-variable framework or in a discrete-variable spin-wave framework. In this subsection we will only discuss the continuous-variable approach, because it is relavant to the previous subsection. 
+
+In the continuous-variable approach, the collective spin of an ensemble is treated as an effective harmonic oscillator. A representative experiment was performed by Sherson \textit{et al.}, in which a quantum state of light was teleported onto a macroscopic atomic ensemble containing approximately \(10^{12}\) cesium atoms \cite{Sherson2006}. The atoms were optically pumped into a coherent spin state with a large mean spin along the \(x\)-direction(see Fig.\ref{fig:Sherson}). The two transverse spin components could then be normalized as canonical variables,
+\begin{equation}
+    \hat{X}_A =
+    \frac{\hat{J}^{\mathrm{rot}}_y}{\sqrt{J_x}},
+    \qquad
+    \hat{P}_A =
+    \frac{\hat{J}^{\mathrm{rot}}_z}{\sqrt{J_x}},
+\end{equation}
+where \(J_x\) is the large mean collective spin. Under the condition that the transverse spin fluctuations are small compared with \(J_x\), these variables approximately satisfy
+\begin{equation}
+    [\hat{X}_A,\hat{P}_A]=i.
+\end{equation}
+This makes the atomic ensemble mathematically analogous to an optical mode with quadrature operators.
+\newpage
+The entanglement resource in the Sherson experiment was created by sending a strong off-resonant light pulse through the atomic ensemble.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/atom and light set up.png}
+    \caption{Diagram of the experiment by Sherson \textit{et al.} \cite{Sherson2006}.}
+    \label{fig:Sherson}
+\end{figure}
+Through a Faraday-type interaction, the polarization quadratures of the outgoing light became entangled with the collective spin quadratures of the atoms. Physically, the atomic spin rotated the polarization of the light, while the light also acted back on the atoms through the ac Stark effect. After this interaction, the outgoing light pulse was sent to Alice and mixed on a \(50/50\) beamsplitter with the unknown optical state to be teleported. Alice then performed a Bell measurement using polarization homodyne detection. The resulting classical photocurrents were sent to Bob, who applied radio-frequency magnetic-field pulses to the atomic ensemble. These pulses displaced the collective spin variables according to Alice's measurement result.
+
+Ideally, the feed-forward operation maps the input optical quadratures onto the atomic ensemble,
+\begin{equation}
+    \hat{Y},\hat{Q}
+    \longrightarrow
+    \hat{X}^{\mathrm{tele}}_A,\hat{P}^{\mathrm{tele}}_A ,
+\end{equation}
+where \(\hat{Y}\) and \(\hat{Q}\) are the quadratures of the input light field, and \(\hat{X}^{\mathrm{tele}}_A\), \(\hat{P}^{\mathrm{tele}}_A\) are the final teleported atomic variables. The original optical state is not transferred by a direct classical copying process. Instead, the pre-existing light--matter entanglement, the Bell measurement, the classical communication, and the conditional spin displacement together reproduce the input quantum state in the atomic ensemble.
+
+The performance of the teleportation is quantified by the fidelity between the input optical state and the reconstructed atomic state. Sherson \textit{et al.}\cite{Sherson2006} reported deterministic teleportation of coherent states with fidelities
+$F = 0.60 \pm 0.02$ for $\bar{n}=5$, and  $F = 0.58 \pm 0.02$ for $\bar{n}=20$.
+
+These values exceeded the corresponding classical benchmarks, showing that the process could not be explained as a purely classical measure-and-prepare transfer.
+
+Overall, atomic ensemble systems show how quantum teleportation can become a practical interface between communication and storage. The earlier Rydberg-atom EPR experiment demonstrated that entanglement between massive particles can be engineered through controlled atom--field interaction. Later ensemble experiments extended this idea to macroscopic matter systems, where collective spin states can store, receive, and transmit quantum information.
+
+
 \subsection{Solid-State System}
 
+Optical-mode and atomic-ensemble systems fascinating as quantum teleporatation platforms, however,
+they might be difficult to integrate into a large-scale quantum network or quantum computer.
+Now we're going to discuss solid-state systems, where the quantum information is stored and processed in artificial quantum devices fabricated on a chip particuly superconduting circuits.
+Instead of using freely propagating photons or naturally occurring atoms, this approach uses engineered macroscopic quantum systems whose quantum states behave like controllable two-level systems.
+
+A representative experiment was demonstrated by Steffen \textit{et al.}\cite{Steffen2013}, who realized deterministic quantum teleportation with feed-forward in a superconducting circuit.
+The system consists of three superconducting transmon qubits, denoted as $Q_1$, $Q_2$, and $Q_3$, 
+coupled to three superconducting coplanar waveguide resonators(see Fig.\ref{fig:Steffen}). 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/solid state system setup.png}
+    \caption{Diagram of the experiment by Steffen \textit{et al.} \cite{Steffen2013}, figure a is the connection diagram and the figure b-f is detail layout of the ICs.}
+    \label{fig:Steffen}
+\end{figure}
+\newpage
+Initially, $Q_1$ is the qubit carrying the unknown input state
+\begin{equation}
+    |\psi_{\mathrm{in}}\rangle = \alpha |0\rangle + \beta |1\rangle ,
+\end{equation}
+while $Q_2$ and $Q_3$ are first prepared as an entangled Bell pair. Here $Q_1$ and $Q_2$ belong to the sender side, and $Q_3$ acts as the receiver qubit. Although the qubits are located on the same superconducting chip, the state is not transferred by directly moving the physical carrier from $Q_1$ to $Q_3$. Instead, as in the standard teleportation protocol, the transfer relies on a shared entangled resource and classical information obtained from a Bell-state measurement.
+
+The protocol begins by preparing an entangled state between $Q_2$ and $Q_3$, for example
+\begin{equation}
+    |\Phi^+\rangle_{23}
+    =
+    \frac{1}{\sqrt{2}}
+    \left(
+    |00\rangle_{23}
+    +
+    |11\rangle_{23}
+    \right).
+\end{equation}
+This entangled pair plays the same role as the EPR pair in the original teleportation proposal. 
+After this shared resource is created, the unknown state $|\psi_{\mathrm{in}}\rangle$ is prepared on $Q_1$.
+The sender then performs a Bell-state measurement on $Q_1$ and $Q_2$. In the ideal circuit model, this Bell measurement can be understood as a transformation from the Bell basis to the computational basis, followed by ordinary qubit readout.
+Experimentally, Steffen \textit{et al.} implemented the required two-qubit operations using controlled-PHASE(CPHASE) gates and single-qubit microwave rotations. The CPHASE gates are generated by tuning the transition frequencies of the transmon qubits with fast flux pulses, while the single-qubit rotations are driven by microwave pulses.
+
+After the Bell-state measurement, the receiver qubit $Q_3$ is projected into a state related to the original input state by a Pauli operation:
+\begin{equation}
+    |\psi_{\mathrm{out}}\rangle
+    =
+    \{ I, X, Z, \tilde{Y} \}
+    |\psi_{\mathrm{in}}\rangle ,
+\end{equation}
+where the required correction depends on the two classical bits obtained from the Bell measurement. Therefore, the output state is not always immediately equal to $|\psi_{\mathrm{in}}\rangle$; it is equal up to a known single-qubit rotation. To complete the teleportation deterministically, the experiment must identify which Bell-state outcome occurred and then apply the corresponding correction to $Q_3$. This final conditional correction is called feed-forward. 
+The feed-forward step applies this correction in real time. The measurement result from
+$Q_1$ and $Q_2$ is sent to control electronics, which then applies the corresponding
+microwave pulse to $Q_3$. In other words, feed-forward is the step that uses the sender's
+measurement result to complete the teleportation on the receiver qubit.
+
+
+A key achievement of this solid-state implementation is that it does not merely post-select one successful outcome. In many optical teleportation experiments, only part of the Bell basis can be distinguished, so the protocol succeeds only probabilistically. In this superconducting circuit experiment, Josephson parametric amplifiers were used to perform high-fidelity single-shot measurements. 
+Moreover, the experiment implemented deterministic teleportation with active feed-forward, using all four possible Bell-measurement outcomes.
+
+The reported results show that the teleported state fidelities are above the classical limit. For post-selected teleportation, the average output-state fidelity was about $0.817$, with an average process fidelity of about $0.720$. When all four Bell-state outcomes were distinguished deterministically, the average output-state fidelity was about $0.771$, with a process fidelity of about $0.655$. When real-time feed-forward was included, the directly measured deterministic state-transfer fidelity was about $0.688$, still above the classical threshold of $2/3$ for state teleportation. The lower fidelity in the full feed-forward case mainly came from imperfect qubit coherence, gate errors, readout errors, and the finite delay required for real-time measurement processing and conditional control.
+
+Overall, the solid-state implementation of quantum teleportation provides alternative rather than photons or atoms with superconducting artificial atoms embedded in a integrated microwave circuit.
+And with the integrated circuit platform, we can achieve deterministic teleportation with fast feed-forward(around 500$\mathrm{ns}$), which optical or atomic systems are hard to compare.
+Still, for the three methods the overall protocol involves the same aspects, an unknown input state, a shared entangled pair, classical information communication, and a conditional correction.
 
 \section{Advances in Quantum Teleportation}
+
 \label{sec:Advances in Quantum Teleportation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Quantum Teleportation for Quantum Communication}
 
+In the previous sections, we detailed dicussed different physical platforms
+for quantum teleporation. Based on the uses of those different platforms and method, 
+the most advanced research focus on using quantum teleportation for quantum communication for potentially quantum internet or quantum computers.
+
+A clear experimental example is the ground-to-satellite quantum teleportation
+experiment performed using the Micius satellite(Fig. \ref{fig:satellite_teleportation})\cite{ren2017ground}. In this
+experiment, the quantum state to be teleported was encoded in the polarization of
+a single photon,
+\begin{equation}
+    \ket{\chi}_1 = \alpha \ket{H}_1 + \beta \ket{V}_1,
+    \qquad |\alpha|^2 + |\beta|^2 = 1,
+\end{equation}
+where \(\ket{H}\) and \(\ket{V}\) represent horizontal and vertical polarization.
+These two polarization states play the role of the qubit basis states
+\(\ket{0}\) and \(\ket{1}\). The ground station also prepared an entangled photon
+pair in the Bell state:
+\begin{equation}
+    \ket{\phi^+}_{23}
+    =
+    \frac{1}{\sqrt{2}}
+    \left(
+        \ket{H}_2\ket{H}_3
+        +
+        \ket{V}_2\ket{V}_3
+    \right).
+\end{equation}
+Photon 2 remained at the ground station, while photon 3 was sent through a
+free-space optical uplink to the satellite. The ground station then performed a
+Bell-state measurement on photons 1 and 2. Depending on the Bell-state
+measurement result, the state of photon 3 became either the desired state
+\(\ket{\chi}\), or a state related to it by a known unitary correction such as a
+\(\pi\)-phase shift. Therefore, the unknown quantum state was not physically
+carried by photon 1 to the satellite; instead, it was reconstructed in the distant
+photon 3 by using entanglement plus classical information.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/Groud to satellite.png}
+    \caption{Diagram of the ground-to-satellite quantum teleportation experiment by Ren \textit{et al.} \cite{ren2017ground}.}
+    \label{fig:satellite_teleportation}
+\end{figure}
+
+Previous teleportation experiments using optical fibers or terrestrial free-space channels were limited
+to roughly the hundred-kilometer scale because loss increases strongly with
+distance. A satellite link reduces this problem because most of the propagation
+path is through empty space rather than through an absorbing medium. In the
+Micius experiment, the teleportation distance varied from about \(500\) km to
+\(1400\) km, with a measured channel loss ranging from about \(41\) dB to
+\(52\) dB. Even with this large loss, the experiment successfully teleported six
+input states chosen from mutually unbiased bases on the Bloch sphere:
+\[
+    \ket{H},\quad \ket{V},\quad \ket{+},\quad \ket{-},\quad \ket{R},\quad \ket{L}.
+\]
+The measured average teleportation fidelity was $F = 0.80 \pm 0.01$, which is clearly above the classical limit of \(2/3\).
+
+From an experimental point of view, the propagation direction, or wave vector
+\(\mathbf{k}\), is also crucial. The qubit itself is encoded in polarization, which is
+defined transverse to the photon's propagation direction. However, in a
+ground-to-satellite link, the direction of propagation is constantly changing
+because the satellite moves rapidly relative to the ground station. Atmospheric
+turbulence also causes beam wandering and beam broadening. Therefore, the
+experiment required a narrow-divergence transmitting telescope and a precise
+acquiring, pointing, and tracking system. In addition, polarization compensation
+using wave plates was needed so that the polarization qubit remained well-defined
+during transmission.
+
+This result shows that quantum teleportation is not only a conceptual consequence
+of entanglement, but also a practical building block for a future quantum internet.
+In such a network, teleportation could be combined with entanglement distribution,
+quantum memories, and entanglement swapping to connect distant quantum nodes.
+
+
 \subsection{Quantum Gate Teleportation for Quantum Computing}
 
-\section{Outlook of Quantum Teleportation}
+While standard quantum teleportation transfers an unknown quantum state from one system to another, quantum gate teleportation (QGT) extends the same principle to quantum operations.
+Instead of physically moving a qubit from one processor to another, QGT uses a previously shared entangled state, local operations, measurement, and classical feed-forward to implement a non-local gate between distant qubits.
+This idea is especially important for quantum computing, because large-scale quantum processors require many qubits with high connectivity. Building a single device in which every qubit can directly interact with every other qubit is technically difficult.
+QGT provides an opportunity to effectively create a large processor by connecting smaller modules together. 
+
+A recent experimental demonstration by Main \textit{et al.}\cite{Main2025Distributed} shows how this idea can be used for distributed quantum computing across an optical network link.
+In their architecture(see Fig. \ref{fig:QGT}(b)), two trapped-ion modules, labeled Alice and Bob, are separated by about two meters. Each module contains two functional types of qubits: a \textit{network qubit}, used to create remote entanglement through photons, and a \textit{circuit qubit}, 
+used to store and process the computational quantum information. This separation of roles is essential. The network qubits interact with the optical link and generate entanglement, while the circuit qubits preserve the quantum information during the probabilistic entanglement-generation process.\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/QGT.png}
+    \caption{(a) conceptual diagram of the QGT with multiple modules, (b) QGT setup, (c) physical connection between multiple modules. By Main \textit{et al.} \cite{Main2025Distributed}.}
+    \label{fig:QGT}
+    
+\end{figure}
+
+The central resource is a remotely shared Bell state between the two network qubits,
+\[
+\ket{\Psi^+}_{N}
+=
+\frac{1}{\sqrt{2}}
+\left(
+\ket{10}+\ket{01}
+\right),
+\]
+which is generated by photon-mediated entanglement and heralded by detector clicks. 
+Once this entanglement has been successfully produced, local controlled-Z operations are performed inside each module between the network qubit and the local circuit qubit(see Fig. \ref{fig:QGT_circuit}). 
+The network qubits are then measured in chosen bases, and the two modules exchange the measurement outcomes through a classical communication channel. Finally, conditional single-qubit corrections are applied to the circuit qubits. The net effect is that the circuit qubits, which are physically located in different modules, undergo a non-local controlled-Z gate,
+\[
+\ket{\psi_{\mathrm{in}}}_{AB}
+\longrightarrow
+U_{\mathrm{CZ}}\ket{\psi_{\mathrm{in}}}_{AB}.
+\]
+Thus, the gate is not produced by a direct physical interaction between the two circuit qubits, but by consuming the previously shared entanglement.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/QGT CZgate.png}
+    \caption{Teleportation of a CZ gate between two trapped-ion modules. By Main \textit{et al.} \cite{Main2025Distributed}.}
+    \label{fig:QGT_circuit}
+\end{figure}
+The important point is that the gate teleportation protocol is deterministic after entanglement has been heralded. Photon loss only affects whether the Bell pair is successfully created; it does not destroy the unknown computational state stored in the circuit qubits. This is a major advantage over direct photon-mediated transfer of quantum information, where loss of the photon can correspond to loss of the quantum state itself. In QGT, the quantum channel is only responsible for preparing entanglement, so failed attempts can simply be repeated until success. This makes the method more suitable for scalable architectures.
+
+For the result, they obtained an average gate fidelity of $0.862(9)$ on QGT of a controlled-Z gate between two trapped-ion modules.
+Moreover, the authors also showed that the same QGT process can be repeated several times to build more complicated two-qubit gates. For example, they implemented distributed iSWAP and SWAP gates. The iSWAP gate used two teleported CZ gates and reached a fidelity of $0.70(2)$, while the SWAP gate used three teleported CZ gates and reached a fidelity of $0.64(2)$.
+
+Beyond individual gates, the experiment also ran a small distributed quantum algorithm: a two-qubit version of Grover's search algorithm. In this algorithm, one teleported CZ gate was used for the oracle, and another was used for the diffusion operation. For the four possible marked states,
+\[
+a \in \{00,01,10,11\},
+\]
+the system found the correct answer with an average success probability of $0.71(1)$.
+\section{Conclusion}
+
+In this report, we reviewed the development of quantum teleportation from its original theoretical idea\cite{Bennett} to several experimental realizations.
+Quantum teleportation does not physically move a particle from one place to another. Yet, it reconstructs an unknown quantum state in a different system by using shared entanglement, a Bell-type measurement, classical communication, and a conditional correction. 
+The examples discussed in this report show that this same basic protocol can be applied to many platforms, including optical qubits, continuous-variable optical modes, atomic ensembles, superconducting circuits, satellite-based communication, and quantum gate teleportation.
+Each platform has a different advantage: photons are useful for long-distance communication, atomic ensembles are promising for quantum memories, solid-state systems allow fast feed-forward control, and gate teleportation provides a way to connect separated quantum processors. 
+Although current experiments still face challenges such as loss, imperfect fidelity, limited efficiency, and scalability, they show that teleportation is no longer only a conceptual test of quantum mechanics. It has become an important tool for future quantum communication networks, quantum memories, and distributed quantum computation.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\renewcommand{\bibsection}{\section*{References}}
 
 \bibliographystyle{apsrev}
 \bibliography{reference}
 
 \end{document}
-
 
 
